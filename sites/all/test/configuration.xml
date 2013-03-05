@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+
+<!-- see http://www.phpunit.de/wiki/Documentation -->
+<!--phpunit bootstrap="/path/to/bootstrap.php"
+         colors="false"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         stopOnFailure="true">
+</phpunit-->
+
+<phpunit bootstrap="bootstrap.php">
+  <testsuite name="Ground Tests">
+    <directory>E:\Websites\marlothdb\sites\all\modules\custom\metahub\test</directory>
+    <directory>E:\Websites\marlothdb\sites\all\modules\custom\ground_php\modules\ground_db\test</directory>
+  </testsuite>
+</phpunit>

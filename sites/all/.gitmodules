@@ -1,0 +1,6 @@
+[submodule "modules/custom/ground_php"]
+	path = modules/custom/ground_php
+	url = git@github.com:silentorb/ground_php.git
+[submodule "modules/custom/metahub"]
+	path = modules/custom/metahub
+	url = git@github.com:silentorb/metahub_php.git
