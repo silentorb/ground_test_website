@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 05, 2013 at 11:57 AM
+-- Generation Time: Mar 06, 2013 at 10:13 AM
 -- Server version: 5.5.22
 -- PHP Version: 5.3.10
 
@@ -162,20 +162,20 @@ CREATE TABLE IF NOT EXISTS `autoload_registry_file` (
 INSERT INTO `autoload_registry_file` (`filename`, `hash`) VALUES
 ('sites/all/modules/custom/ground_php/inc/Delete.inc', '445c3a2fe8a96234e9198e3b5b6d1338725878b9d338f0a4c19800803dd0b7cf'),
 ('sites/all/modules/custom/ground_php/inc/Dynamic_Query.inc', '0c4efeb976b370a701ed24ba7f5348b2c1685828b18200e019b86e3f3018dc33'),
-('sites/all/modules/custom/ground_php/inc/Ground.inc', '77f8b1df1a6ff7fa32bd0548b30b809078ca225cc8fa5e4e42b5917a4cdcb1fc'),
+('sites/all/modules/custom/ground_php/inc/Ground.inc', '1c7c730107e996201b3de412dc33ea62a7bb84285b8411b105e3becb10ccbcac'),
 ('sites/all/modules/custom/ground_php/inc/Ground_Module.inc', '821e9a759e558530746dc2e4ca61d5e566fcdffd16ce22567f8ce6b3facfedd5'),
-('sites/all/modules/custom/ground_php/inc/Link_Trellis.inc', 'c094d938e1bebf269341e493627c73293441754415af0f8a1e442b0d83d21a5e'),
+('sites/all/modules/custom/ground_php/inc/Link_Trellis.inc', 'a654c40a73cab09111687cc6dcfde46fb6938b829241a97d3dc0e3893c96132a'),
 ('sites/all/modules/custom/ground_php/inc/Node_Query.inc', '1075696c594b5fc84642316dd10d04ccdb3b63b1c635a60fef34ae3f3bfd0968'),
 ('sites/all/modules/custom/ground_php/inc/Object_Map.inc', 'c9c1124453867599ce5406f3a486c3ced7f7c19dd0dd326ff1e0f65e5a6f70b3'),
 ('sites/all/modules/custom/ground_php/inc/Query.inc', 'fd770ac8a7e906ad80010316deb2b5b290ffb150330a7942be01f759cb949765'),
-('sites/all/modules/custom/ground_php/inc/Trellis.inc', 'a7872411bbfe1869326198d0a9dd4b0c61d013e91f9ee86f0b0f62325db49279'),
+('sites/all/modules/custom/ground_php/inc/Trellis.inc', 'f55edb0be1495e6aad9e91500d848a36d6f63d3719d48b53cda19a4d92db1626'),
 ('sites/all/modules/custom/ground_php/inc/Update.inc', '9095d542c74d875948ff859d8fcaac89364c2003d3b41bf2bf6ef212ab91aab0'),
-('sites/all/modules/custom/ground_php/modules/ground_db/inc/Ground_Database.inc', '86df48aed9d587e1eee0c64b729229e3160b1b5323cdd8f76370a634fa075e52'),
-('sites/all/modules/custom/ground_php/modules/ground_db/inc/Table.inc', '0be3afd47827c9d34fd30813ae93e2d76984ab172558ed81865a8bfd56d23167'),
-('sites/all/modules/custom/ground_php/modules/ground_drupal/inc/CCK.inc', '1eace7a6203e8b204cedf66fd6821a2bf9ab20c7e120c78cd6b548c13fd4385f'),
+('sites/all/modules/custom/ground_php/modules/ground_db/inc/Ground_Database.inc', 'b90e42ef7d3f746fff0717016ca255d77f1e236d1f9765842c7939435395014a'),
+('sites/all/modules/custom/ground_php/modules/ground_db/inc/Table.inc', '607e2be5e4a4bd1696dfcfcb0c16195226ed1e73bdd54aa8fd8aad27b83b6d23'),
+('sites/all/modules/custom/ground_php/modules/ground_drupal/inc/CCK.inc', '397e45d3261ef3a4645e06778d62f32f057260756cb59d9dec4b5cd9a4044705'),
 ('sites/all/modules/custom/ground_php/modules/ground_drupal/inc/CCK_Link.inc', '4117866abc9d704cc695aaee1b7f427523560684367749f3955698e1ef2b451b'),
-('sites/all/modules/custom/ground_php/modules/ground_drupal/inc/Content_Query.inc', 'c4d33e2403263d4418e64967031960d7a8641693d5810fb0f8691e38705f8ea0'),
-('sites/all/modules/custom/ground_php/modules/ground_drupal/inc/Ground_Drupal.inc', '0ab1d17fd5dc2540e5e92049c07675eaa65c23dd2a2bc8fb8ce711e99e5abf39'),
+('sites/all/modules/custom/ground_php/modules/ground_drupal/inc/Content_Query.inc', 'f42ce16e8caca737625a3de782005a45037127257ff54c7fb842c6f09a004c13'),
+('sites/all/modules/custom/ground_php/modules/ground_drupal/inc/Ground_Drupal.inc', '53b4cd5a1839d2125e036f33929074af01a5c8e93f0d848e078ff865704e6e3b'),
 ('sites/all/modules/custom/ground_php/modules/ground_history/inc/History.inc', '11f914d959528a74a8a2a78ca934808f15af3d371d67e0dbf85c772fbefd3a11'),
 ('sites/all/modules/custom/ground_php/modules/ground_history/inc/History_Commit.inc', 'b978db646f0d8f8a29e7fd24948fe7ac0433c65d6c89d786851cdbc1f31411ef'),
 ('sites/all/modules/custom/ground_php/modules/ground_history/inc/History_Object.inc', '6493ca303950f6c517899d19d0cb188b2c2608b8c93569e6abc6bc51eccec7af'),
@@ -350,6 +350,23 @@ CREATE TABLE IF NOT EXISTS `cache_form` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `cache_location`
+--
+
+CREATE TABLE IF NOT EXISTS `cache_location` (
+  `cid` varchar(255) NOT NULL DEFAULT '',
+  `data` longblob,
+  `expire` int(11) NOT NULL DEFAULT '0',
+  `created` int(11) NOT NULL DEFAULT '0',
+  `headers` text,
+  `serialized` smallint(6) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`cid`),
+  KEY `expire` (`expire`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `cache_menu`
 --
 
@@ -412,6 +429,33 @@ CREATE TABLE IF NOT EXISTS `comments` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `content_field_images`
+--
+
+CREATE TABLE IF NOT EXISTS `content_field_images` (
+  `vid` int(10) unsigned NOT NULL DEFAULT '0',
+  `nid` int(10) unsigned NOT NULL DEFAULT '0',
+  `delta` int(10) unsigned NOT NULL DEFAULT '0',
+  `field_images_fid` int(11) DEFAULT NULL,
+  `field_images_list` tinyint(4) DEFAULT NULL,
+  `field_images_data` text,
+  PRIMARY KEY (`vid`,`delta`),
+  KEY `nid` (`nid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `content_field_images`
+--
+
+INSERT INTO `content_field_images` (`vid`, `nid`, `delta`, `field_images_fid`, `field_images_list`, `field_images_data`) VALUES
+(1, 1, 0, 4, 1, 'a:2:{s:3:"alt";s:0:"";s:5:"title";s:0:"";}'),
+(1, 1, 1, 5, 1, 'a:2:{s:3:"alt";s:0:"";s:5:"title";s:0:"";}'),
+(1, 1, 2, 6, 1, 'a:2:{s:3:"alt";s:0:"";s:5:"title";s:0:"";}'),
+(2, 2, 0, 3, 1, 'a:2:{s:3:"alt";s:0:"";s:5:"title";s:0:"";}');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `content_field_victims`
 --
 
@@ -459,8 +503,11 @@ CREATE TABLE IF NOT EXISTS `content_node_field` (
 
 INSERT INTO `content_node_field` (`field_name`, `type`, `global_settings`, `required`, `multiple`, `db_storage`, `module`, `db_columns`, `active`, `locked`) VALUES
 ('field_atmosphere', 'text', 'a:4:{s:15:"text_processing";s:0:"";s:10:"max_length";s:0:"";s:14:"allowed_values";s:0:"";s:18:"allowed_values_php";s:0:"";}', 0, 0, 1, 'text', 'a:1:{s:5:"value";a:5:{s:4:"type";s:4:"text";s:4:"size";s:3:"big";s:8:"not null";b:0;s:8:"sortable";b:1;s:5:"views";b:1;}}', 1, 0),
+('field_doc', 'filefield', 'a:3:{s:10:"list_field";s:1:"0";s:12:"list_default";i:1;s:17:"description_field";s:1:"0";}', 0, 0, 1, 'filefield', 'a:3:{s:3:"fid";a:3:{s:4:"type";s:3:"int";s:8:"not null";b:0;s:5:"views";b:1;}s:4:"list";a:4:{s:4:"type";s:3:"int";s:4:"size";s:4:"tiny";s:8:"not null";b:0;s:5:"views";b:1;}s:4:"data";a:3:{s:4:"type";s:4:"text";s:9:"serialize";b:1;s:5:"views";b:1;}}', 1, 0),
 ('field_image', 'filefield', 'a:3:{s:10:"list_field";s:1:"0";s:12:"list_default";i:1;s:17:"description_field";s:1:"0";}', 0, 0, 1, 'filefield', 'a:3:{s:3:"fid";a:3:{s:4:"type";s:3:"int";s:8:"not null";b:0;s:5:"views";b:1;}s:4:"list";a:4:{s:4:"type";s:3:"int";s:4:"size";s:4:"tiny";s:8:"not null";b:0;s:5:"views";b:1;}s:4:"data";a:3:{s:4:"type";s:4:"text";s:9:"serialize";b:1;s:5:"views";b:1;}}', 1, 0),
+('field_images', 'filefield', 'a:3:{s:10:"list_field";s:1:"0";s:12:"list_default";i:1;s:17:"description_field";s:1:"0";}', 0, 1, 0, 'filefield', 'a:3:{s:3:"fid";a:3:{s:4:"type";s:3:"int";s:8:"not null";b:0;s:5:"views";b:1;}s:4:"list";a:4:{s:4:"type";s:3:"int";s:4:"size";s:4:"tiny";s:8:"not null";b:0;s:5:"views";b:1;}s:4:"data";a:3:{s:4:"type";s:4:"text";s:9:"serialize";b:1;s:5:"views";b:1;}}', 1, 0),
 ('field_lair', 'nodereference', 'a:1:{s:19:"referenceable_types";a:4:{s:4:"lair";s:4:"lair";s:7:"monster";i:0;s:4:"page";i:0;s:5:"story";i:0;}}', 0, 0, 1, 'nodereference', 'a:1:{s:3:"nid";a:4:{s:4:"type";s:3:"int";s:8:"unsigned";b:1;s:8:"not null";b:0;s:5:"index";b:1;}}', 1, 0),
+('field_location', 'location', 'a:3:{s:17:"location_settings";a:2:{s:4:"form";a:1:{s:6:"fields";a:8:{s:4:"name";a:3:{s:7:"collect";s:1:"1";s:7:"default";s:0:"";s:6:"weight";s:1:"2";}s:6:"street";a:3:{s:7:"collect";s:1:"1";s:7:"default";s:0:"";s:6:"weight";s:1:"4";}s:10:"additional";a:3:{s:7:"collect";s:1:"1";s:7:"default";s:0:"";s:6:"weight";s:1:"6";}s:4:"city";a:3:{s:7:"collect";s:1:"0";s:7:"default";s:0:"";s:6:"weight";s:1:"8";}s:8:"province";a:4:{s:7:"collect";s:1:"0";s:6:"widget";s:12:"autocomplete";s:7:"default";s:0:"";s:6:"weight";s:2:"10";}s:11:"postal_code";a:3:{s:7:"collect";s:1:"0";s:7:"default";s:0:"";s:6:"weight";s:2:"12";}s:7:"country";a:3:{s:7:"collect";s:1:"1";s:7:"default";s:2:"us";s:6:"weight";s:2:"14";}s:7:"locpick";a:2:{s:7:"collect";s:1:"1";s:6:"weight";s:2:"20";}}}s:7:"display";a:1:{s:4:"hide";a:12:{s:4:"name";i:0;s:6:"street";i:0;s:10:"additional";i:0;s:4:"city";i:0;s:8:"province";i:0;s:11:"postal_code";i:0;s:7:"country";i:0;s:7:"locpick";i:0;s:13:"province_name";i:0;s:12:"country_name";i:0;s:8:"map_link";i:0;s:6:"coords";i:0;}}}s:10:"gmap_macro";s:7:"[gmap ]";s:11:"gmap_marker";s:6:"drupal";}', 0, 0, 1, 'location_cck', 'a:1:{s:3:"lid";a:3:{s:4:"type";s:3:"int";s:8:"unsigned";b:1;s:8:"not null";b:0;}}', 1, 0),
 ('field_teeth', 'number_integer', 'a:6:{s:6:"prefix";s:0:"";s:6:"suffix";s:0:"";s:3:"min";s:0:"";s:3:"max";s:0:"";s:14:"allowed_values";s:0:"";s:18:"allowed_values_php";s:0:"";}', 0, 0, 1, 'number', 'a:1:{s:5:"value";a:3:{s:4:"type";s:3:"int";s:8:"not null";b:0;s:8:"sortable";b:1;}}', 1, 0),
 ('field_victims', 'userreference', 'a:2:{s:19:"referenceable_roles";a:1:{i:2;i:0;}s:20:"referenceable_status";s:0:"";}', 0, 1, 0, 'userreference', 'a:1:{s:3:"uid";a:4:{s:4:"type";s:3:"int";s:8:"unsigned";b:1;s:8:"not null";b:0;s:5:"index";b:1;}}', 1, 0);
 
@@ -490,8 +537,11 @@ CREATE TABLE IF NOT EXISTS `content_node_field_instance` (
 
 INSERT INTO `content_node_field_instance` (`field_name`, `type_name`, `weight`, `label`, `widget_type`, `widget_settings`, `display_settings`, `description`, `widget_module`, `widget_active`) VALUES
 ('field_atmosphere', 'lair', 31, 'Atmosphere', 'text_textfield', 'a:2:{s:4:"rows";N;s:4:"size";N;}', 'a:4:{s:5:"label";a:2:{s:6:"format";s:5:"above";s:7:"exclude";i:0;}s:6:"teaser";a:2:{s:6:"format";s:7:"default";s:7:"exclude";i:0;}s:4:"full";a:2:{s:6:"format";s:7:"default";s:7:"exclude";i:0;}i:4;a:2:{s:6:"format";s:7:"default";s:7:"exclude";i:0;}}', '', 'text', 1),
-('field_image', 'monster', 34, 'Image', 'filefield_widget', 'a:5:{s:15:"file_extensions";s:0:"";s:9:"file_path";s:0:"";s:18:"progress_indicator";s:3:"bar";s:21:"max_filesize_per_file";s:0:"";s:21:"max_filesize_per_node";s:0:"";}', 'a:4:{s:5:"label";a:2:{s:6:"format";s:5:"above";s:7:"exclude";i:0;}s:6:"teaser";a:2:{s:6:"format";s:7:"default";s:7:"exclude";i:0;}s:4:"full";a:2:{s:6:"format";s:7:"default";s:7:"exclude";i:0;}i:4;a:2:{s:6:"format";s:7:"default";s:7:"exclude";i:0;}}', '', 'filefield', 1),
+('field_doc', 'monster', 35, 'Doc', 'filefield_widget', 'a:5:{s:15:"file_extensions";s:3:"txt";s:9:"file_path";s:0:"";s:18:"progress_indicator";s:3:"bar";s:21:"max_filesize_per_file";s:0:"";s:21:"max_filesize_per_node";s:0:"";}', 'a:4:{s:5:"label";a:2:{s:6:"format";s:5:"above";s:7:"exclude";i:0;}s:6:"teaser";a:2:{s:6:"format";s:7:"default";s:7:"exclude";i:0;}s:4:"full";a:2:{s:6:"format";s:7:"default";s:7:"exclude";i:0;}i:4;a:2:{s:6:"format";s:7:"default";s:7:"exclude";i:0;}}', '', 'filefield', 1),
+('field_image', 'lair', 32, 'Image', 'imagefield_widget', 'a:14:{s:15:"file_extensions";s:16:"png gif jpg jpeg";s:9:"file_path";s:0:"";s:18:"progress_indicator";s:3:"bar";s:21:"max_filesize_per_file";s:0:"";s:21:"max_filesize_per_node";s:0:"";s:14:"max_resolution";s:1:"0";s:14:"min_resolution";s:1:"0";s:3:"alt";s:0:"";s:10:"custom_alt";i:0;s:5:"title";s:0:"";s:12:"custom_title";i:0;s:10:"title_type";s:9:"textfield";s:13:"default_image";N;s:17:"use_default_image";i:0;}', 'a:4:{s:5:"label";a:2:{s:6:"format";s:5:"above";s:7:"exclude";i:0;}s:6:"teaser";a:2:{s:6:"format";s:11:"image_plain";s:7:"exclude";i:0;}s:4:"full";a:2:{s:6:"format";s:11:"image_plain";s:7:"exclude";i:0;}i:4;a:2:{s:6:"format";s:11:"image_plain";s:7:"exclude";i:0;}}', '', 'imagefield', 1),
+('field_images', 'monster', 34, 'Images', 'imagefield_widget', 'a:14:{s:15:"file_extensions";s:16:"png gif jpg jpeg";s:9:"file_path";s:0:"";s:18:"progress_indicator";s:3:"bar";s:21:"max_filesize_per_file";s:0:"";s:21:"max_filesize_per_node";s:0:"";s:14:"max_resolution";s:1:"0";s:14:"min_resolution";s:1:"0";s:3:"alt";s:0:"";s:10:"custom_alt";i:0;s:5:"title";s:0:"";s:12:"custom_title";i:0;s:10:"title_type";s:9:"textfield";s:13:"default_image";N;s:17:"use_default_image";i:0;}', 'a:4:{s:5:"label";a:2:{s:6:"format";s:5:"above";s:7:"exclude";i:0;}s:6:"teaser";a:2:{s:6:"format";s:11:"image_plain";s:7:"exclude";i:0;}s:4:"full";a:2:{s:6:"format";s:11:"image_plain";s:7:"exclude";i:0;}i:4;a:2:{s:6:"format";s:11:"image_plain";s:7:"exclude";i:0;}}', '', 'imagefield', 1),
 ('field_lair', 'monster', 32, 'Lair', 'nodereference_select', 'a:4:{s:18:"autocomplete_match";s:8:"contains";s:4:"size";i:60;s:13:"default_value";a:1:{i:0;a:1:{s:3:"nid";s:0:"";}}s:17:"default_value_php";N;}', 'a:4:{s:5:"label";a:2:{s:6:"format";s:5:"above";s:7:"exclude";i:0;}s:6:"teaser";a:2:{s:6:"format";s:7:"default";s:7:"exclude";i:0;}s:4:"full";a:2:{s:6:"format";s:7:"default";s:7:"exclude";i:0;}i:4;a:2:{s:6:"format";s:7:"default";s:7:"exclude";i:0;}}', '', 'nodereference', 1),
+('field_location', 'lair', 33, 'Location', 'location', 'a:2:{s:13:"default_value";a:1:{i:0;a:7:{s:4:"name";s:0:"";s:6:"street";s:0:"";s:10:"additional";s:0:"";s:7:"country";s:2:"us";s:7:"locpick";a:2:{s:13:"user_latitude";s:0:"";s:14:"user_longitude";s:0:"";}s:23:"cck_preview_in_progress";b:1;s:17:"location_settings";a:1:{s:4:"form";a:1:{s:6:"fields";a:14:{s:3:"lid";a:1:{s:7:"default";b:0;}s:4:"name";a:3:{s:7:"default";s:0:"";s:7:"collect";i:1;s:6:"weight";i:2;}s:6:"street";a:3:{s:7:"default";s:0:"";s:7:"collect";i:1;s:6:"weight";i:4;}s:10:"additional";a:3:{s:7:"default";s:0:"";s:7:"collect";i:1;s:6:"weight";i:6;}s:4:"city";a:3:{s:7:"default";s:0:"";s:7:"collect";i:0;s:6:"weight";i:8;}s:8:"province";a:4:{s:7:"default";s:0:"";s:7:"collect";i:0;s:6:"weight";i:10;s:6:"widget";s:12:"autocomplete";}s:11:"postal_code";a:3:{s:7:"default";s:0:"";s:7:"collect";i:0;s:6:"weight";i:12;}s:7:"country";a:3:{s:7:"default";s:2:"us";s:7:"collect";i:1;s:6:"weight";i:14;}s:7:"locpick";a:4:{s:7:"default";b:0;s:7:"collect";i:1;s:6:"weight";i:20;s:6:"nodiff";b:1;}s:8:"latitude";a:1:{s:7:"default";i:0;}s:9:"longitude";a:1:{s:7:"default";i:0;}s:6:"source";a:1:{s:7:"default";i:0;}s:10:"is_primary";a:1:{s:7:"default";i:0;}s:15:"delete_location";a:2:{s:7:"default";b:0;s:6:"nodiff";b:1;}}}}}}s:17:"default_value_php";N;}', 'a:4:{s:5:"label";a:2:{s:6:"format";s:5:"above";s:7:"exclude";i:0;}s:6:"teaser";a:2:{s:6:"format";s:7:"default";s:7:"exclude";i:0;}s:4:"full";a:2:{s:6:"format";s:7:"default";s:7:"exclude";i:0;}i:4;a:2:{s:6:"format";s:7:"default";s:7:"exclude";i:0;}}', '', 'location_cck', 1),
 ('field_teeth', 'monster', 31, 'Teeth', 'number', 'a:2:{s:13:"default_value";a:1:{i:0;a:2:{s:5:"value";s:0:"";s:14:"_error_element";s:43:"default_value_widget][field_teeth][0][value";}}s:17:"default_value_php";N;}', 'a:4:{s:5:"label";a:2:{s:6:"format";s:5:"above";s:7:"exclude";i:0;}s:6:"teaser";a:2:{s:6:"format";s:7:"default";s:7:"exclude";i:0;}s:4:"full";a:2:{s:6:"format";s:7:"default";s:7:"exclude";i:0;}i:4;a:2:{s:6:"format";s:7:"default";s:7:"exclude";i:0;}}', '', 'number', 1),
 ('field_victims', 'monster', 33, 'Victims', 'userreference_select', 'a:5:{s:18:"autocomplete_match";s:8:"contains";s:4:"size";i:60;s:12:"reverse_link";i:0;s:13:"default_value";a:1:{i:0;a:1:{s:3:"uid";s:0:"";}}s:17:"default_value_php";N;}', 'a:4:{s:5:"label";a:2:{s:6:"format";s:5:"above";s:7:"exclude";i:0;}s:6:"teaser";a:2:{s:6:"format";s:7:"default";s:7:"exclude";i:0;}s:4:"full";a:2:{s:6:"format";s:7:"default";s:7:"exclude";i:0;}i:4;a:2:{s:6:"format";s:7:"default";s:7:"exclude";i:0;}}', '', 'userreference', 1);
 
@@ -505,9 +555,20 @@ CREATE TABLE IF NOT EXISTS `content_type_lair` (
   `vid` int(10) unsigned NOT NULL DEFAULT '0',
   `nid` int(10) unsigned NOT NULL DEFAULT '0',
   `field_atmosphere_value` longtext,
+  `field_image_fid` int(11) DEFAULT NULL,
+  `field_image_list` tinyint(4) DEFAULT NULL,
+  `field_image_data` text,
+  `field_location_lid` int(10) unsigned DEFAULT NULL,
   PRIMARY KEY (`vid`),
   KEY `nid` (`nid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `content_type_lair`
+--
+
+INSERT INTO `content_type_lair` (`vid`, `nid`, `field_atmosphere_value`, `field_image_fid`, `field_image_list`, `field_image_data`, `field_location_lid`) VALUES
+(3, 3, 'dark', 7, 1, 'a:2:{s:3:"alt";s:0:"";s:5:"title";s:0:"";}', 1);
 
 -- --------------------------------------------------------
 
@@ -520,9 +581,9 @@ CREATE TABLE IF NOT EXISTS `content_type_monster` (
   `nid` int(10) unsigned NOT NULL DEFAULT '0',
   `field_teeth_value` int(11) DEFAULT NULL,
   `field_lair_nid` int(10) unsigned DEFAULT NULL,
-  `field_image_fid` int(11) DEFAULT NULL,
-  `field_image_list` tinyint(4) DEFAULT NULL,
-  `field_image_data` text,
+  `field_doc_fid` int(11) DEFAULT NULL,
+  `field_doc_list` tinyint(4) DEFAULT NULL,
+  `field_doc_data` text,
   PRIMARY KEY (`vid`),
   KEY `nid` (`nid`),
   KEY `field_lair_nid` (`field_lair_nid`)
@@ -532,9 +593,9 @@ CREATE TABLE IF NOT EXISTS `content_type_monster` (
 -- Dumping data for table `content_type_monster`
 --
 
-INSERT INTO `content_type_monster` (`vid`, `nid`, `field_teeth_value`, `field_lair_nid`, `field_image_fid`, `field_image_list`, `field_image_data`) VALUES
-(1, 1, 32, NULL, 1, 1, NULL),
-(2, 2, 24, NULL, 2, 1, NULL);
+INSERT INTO `content_type_monster` (`vid`, `nid`, `field_teeth_value`, `field_lair_nid`, `field_doc_fid`, `field_doc_list`, `field_doc_data`) VALUES
+(1, 1, 32, 3, NULL, NULL, NULL),
+(2, 2, 24, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -584,15 +645,18 @@ CREATE TABLE IF NOT EXISTS `files` (
   KEY `uid` (`uid`),
   KEY `status` (`status`),
   KEY `timestamp` (`timestamp`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
 
 --
 -- Dumping data for table `files`
 --
 
 INSERT INTO `files` (`fid`, `uid`, `filename`, `filepath`, `filemime`, `filesize`, `status`, `timestamp`) VALUES
-(1, 1, 'Red-Dragon.jpg', 'sites/default/files/Red-Dragon.jpg', 'image/jpeg', 26145, 1, 1362435028),
-(2, 1, 'FileOgre1.png', 'sites/default/files/FileOgre1.png', 'image/png', 378977, 1, 1362435140);
+(3, 1, 'FileOgre1.png', 'sites/default/files/FileOgre1.png', 'image/png', 378977, 1, 1362589129),
+(4, 1, 'Red-Dragon.jpg', 'sites/default/files/Red-Dragon.jpg', 'image/jpeg', 26145, 1, 1362589280),
+(5, 1, 'black-dragon.jpg', 'sites/default/files/black-dragon.jpg', 'image/jpeg', 47500, 1, 1362589281),
+(6, 1, 'stupid dragon.jpg', 'sites/default/files/stupid dragon.jpg', 'image/jpeg', 75384, 1, 1362589382),
+(7, 1, '1292276253_D&D6.jpg', 'sites/default/files/1292276253_D&D6.jpg', 'image/jpeg', 271097, 1, 1362589519);
 
 -- --------------------------------------------------------
 
@@ -681,8 +745,64 @@ CREATE TABLE IF NOT EXISTS `history` (
 --
 
 INSERT INTO `history` (`uid`, `nid`, `timestamp`) VALUES
-(1, 1, 1362435054),
-(1, 2, 1362435141);
+(1, 1, 1362589397),
+(1, 2, 1362589330),
+(1, 3, 1362589522);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `location`
+--
+
+CREATE TABLE IF NOT EXISTS `location` (
+  `lid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL DEFAULT '',
+  `street` varchar(255) NOT NULL DEFAULT '',
+  `additional` varchar(255) NOT NULL DEFAULT '',
+  `city` varchar(255) NOT NULL DEFAULT '',
+  `province` varchar(16) NOT NULL DEFAULT '',
+  `postal_code` varchar(16) NOT NULL DEFAULT '',
+  `country` char(2) NOT NULL DEFAULT '',
+  `latitude` decimal(10,6) NOT NULL DEFAULT '0.000000',
+  `longitude` decimal(10,6) NOT NULL DEFAULT '0.000000',
+  `source` tinyint(4) NOT NULL DEFAULT '0',
+  `is_primary` tinyint(4) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`lid`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `location`
+--
+
+INSERT INTO `location` (`lid`, `name`, `street`, `additional`, `city`, `province`, `postal_code`, `country`, `latitude`, `longitude`, `source`, `is_primary`) VALUES
+(1, 'Mountain Depths', 'No Street', '', '', '', '', 'uk', '52.165509', '0.508118', 1, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `location_instance`
+--
+
+CREATE TABLE IF NOT EXISTS `location_instance` (
+  `nid` int(10) unsigned NOT NULL DEFAULT '0',
+  `vid` int(10) unsigned NOT NULL DEFAULT '0',
+  `uid` int(10) unsigned NOT NULL DEFAULT '0',
+  `genid` varchar(255) NOT NULL DEFAULT '',
+  `lid` int(10) unsigned NOT NULL DEFAULT '0',
+  KEY `nid` (`nid`),
+  KEY `vid` (`vid`),
+  KEY `uid` (`uid`),
+  KEY `genid` (`genid`),
+  KEY `lid` (`lid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `location_instance`
+--
+
+INSERT INTO `location_instance` (`nid`, `vid`, `uid`, `genid`, `lid`) VALUES
+(3, 3, 0, 'cck:field_location:3', 1);
 
 -- --------------------------------------------------------
 
@@ -745,7 +865,7 @@ CREATE TABLE IF NOT EXISTS `menu_links` (
   KEY `menu_plid_expand_child` (`menu_name`,`plid`,`expanded`,`has_children`),
   KEY `menu_parents` (`menu_name`,`p1`,`p2`,`p3`,`p4`,`p5`,`p6`,`p7`,`p8`,`p9`),
   KEY `router_path` (`router_path`(128))
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=241 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=251 ;
 
 --
 -- Dumping data for table `menu_links`
@@ -899,7 +1019,15 @@ INSERT INTO `menu_links` (`menu_name`, `mlid`, `plid`, `link_path`, `router_path
 ('admin', 237, 130, 'admin/settings/uploads', 'admin/settings/uploads', 'File uploads', 'a:1:{s:10:"attributes";a:1:{s:5:"title";s:45:"Control how files may be attached to content.";}}', 'system', 0, 0, 0, 0, 0, 3, 0, 113, 130, 237, 0, 0, 0, 0, 0, 0, 0),
 ('admin', 238, 121, 'admin/help/upload', 'admin/help/upload', 'upload', 'a:0:{}', 'system', -1, 0, 0, 0, 0, 3, 0, 113, 121, 238, 0, 0, 0, 0, 0, 0, 0),
 ('navigation', 239, 0, 'filefield/ahah/%/%/%', 'filefield/ahah/%/%/%', '', 'a:0:{}', 'system', -1, 0, 0, 0, 0, 1, 0, 239, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-('admin', 240, 0, 'admin/content/node-type/monster/fields/field_image/remove', 'admin/content/node-type/monster/fields/field_image/remove', 'Remove field', 'a:0:{}', 'system', -1, 0, 0, 0, 0, 1, 0, 240, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+('navigation', 241, 0, 'location/autocomplete', 'location/autocomplete', '', 'a:0:{}', 'system', -1, 0, 0, 0, 0, 1, 0, 241, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+('navigation', 242, 0, 'location/fetch_provinces', 'location/fetch_provinces', '', 'a:0:{}', 'system', -1, 0, 0, 0, 0, 1, 0, 242, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+('admin', 243, 130, 'admin/settings/location', 'admin/settings/location', 'Location', 'a:1:{s:10:"attributes";a:1:{s:5:"title";s:28:"Settings for Location module";}}', 'system', 0, 0, 0, 0, 0, 3, 0, 113, 130, 243, 0, 0, 0, 0, 0, 0, 0),
+('admin', 244, 121, 'admin/help/location', 'admin/help/location', 'location', 'a:0:{}', 'system', -1, 0, 0, 0, 0, 3, 0, 113, 121, 244, 0, 0, 0, 0, 0, 0, 0),
+('admin', 245, 243, 'admin/settings/location/geocoding/%/%', 'admin/settings/location/geocoding/%/%', '', 'a:0:{}', 'system', -1, 0, 0, 0, 0, 4, 0, 113, 130, 243, 245, 0, 0, 0, 0, 0, 0),
+('admin', 247, 0, 'admin/content/node-type/monster/fields/field_images/remove', 'admin/content/node-type/monster/fields/field_images/remove', 'Remove field', 'a:0:{}', 'system', -1, 0, 0, 0, 0, 1, 0, 247, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+('admin', 248, 0, 'admin/content/node-type/monster/fields/field_doc/remove', 'admin/content/node-type/monster/fields/field_doc/remove', 'Remove field', 'a:0:{}', 'system', -1, 0, 0, 0, 0, 1, 0, 248, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+('admin', 249, 0, 'admin/content/node-type/lair/fields/field_image/remove', 'admin/content/node-type/lair/fields/field_image/remove', 'Remove field', 'a:0:{}', 'system', -1, 0, 0, 0, 0, 1, 0, 249, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+('admin', 250, 0, 'admin/content/node-type/lair/fields/field_location/remove', 'admin/content/node-type/lair/fields/field_location/remove', 'Remove field', 'a:0:{}', 'system', -1, 0, 0, 0, 0, 1, 0, 250, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -999,6 +1127,10 @@ INSERT INTO `menu_router` (`path`, `load_functions`, `to_arg_functions`, `access
 ('admin/content/node-type/lair/fields', '', '', 'user_access', 'a:1:{i:0;s:24:"administer content types";}', 'drupal_get_form', 'a:2:{i:0;s:27:"content_field_overview_form";i:1;s:4:"lair";}', 31, 5, 'admin/content/node-type/lair', 'admin/content/node-type/lair', 'Manage fields', 't', '', 128, '', '', '', 1, 'sites/all/modules/contrib/cck/includes/content.admin.inc'),
 ('admin/content/node-type/lair/fields/field_atmosphere', '', '', 'user_access', 'a:1:{i:0;s:24:"administer content types";}', 'drupal_get_form', 'a:3:{i:0;s:23:"content_field_edit_form";i:1;s:4:"lair";i:2;s:16:"field_atmosphere";}', 63, 6, 'admin/content/node-type/lair/fields', 'admin/content/node-type/lair', 'Atmosphere', 't', '', 128, '', '', '', 0, 'sites/all/modules/contrib/cck/includes/content.admin.inc'),
 ('admin/content/node-type/lair/fields/field_atmosphere/remove', '', '', 'user_access', 'a:1:{i:0;s:24:"administer content types";}', 'drupal_get_form', 'a:3:{i:0;s:25:"content_field_remove_form";i:1;s:4:"lair";i:2;s:16:"field_atmosphere";}', 127, 7, '', 'admin/content/node-type/lair/fields/field_atmosphere/remove', 'Remove field', 't', '', 4, '', '', '', 0, 'sites/all/modules/contrib/cck/includes/content.admin.inc'),
+('admin/content/node-type/lair/fields/field_image', '', '', 'user_access', 'a:1:{i:0;s:24:"administer content types";}', 'drupal_get_form', 'a:3:{i:0;s:23:"content_field_edit_form";i:1;s:4:"lair";i:2;s:11:"field_image";}', 63, 6, 'admin/content/node-type/lair/fields', 'admin/content/node-type/lair', 'Image', 't', '', 128, '', '', '', 0, 'sites/all/modules/contrib/cck/includes/content.admin.inc'),
+('admin/content/node-type/lair/fields/field_image/remove', '', '', 'user_access', 'a:1:{i:0;s:24:"administer content types";}', 'drupal_get_form', 'a:3:{i:0;s:25:"content_field_remove_form";i:1;s:4:"lair";i:2;s:11:"field_image";}', 127, 7, '', 'admin/content/node-type/lair/fields/field_image/remove', 'Remove field', 't', '', 4, '', '', '', 0, 'sites/all/modules/contrib/cck/includes/content.admin.inc'),
+('admin/content/node-type/lair/fields/field_location', '', '', 'user_access', 'a:1:{i:0;s:24:"administer content types";}', 'drupal_get_form', 'a:3:{i:0;s:23:"content_field_edit_form";i:1;s:4:"lair";i:2;s:14:"field_location";}', 63, 6, 'admin/content/node-type/lair/fields', 'admin/content/node-type/lair', 'Location', 't', '', 128, '', '', '', 0, 'sites/all/modules/contrib/cck/includes/content.admin.inc'),
+('admin/content/node-type/lair/fields/field_location/remove', '', '', 'user_access', 'a:1:{i:0;s:24:"administer content types";}', 'drupal_get_form', 'a:3:{i:0;s:25:"content_field_remove_form";i:1;s:4:"lair";i:2;s:14:"field_location";}', 127, 7, '', 'admin/content/node-type/lair/fields/field_location/remove', 'Remove field', 't', '', 4, '', '', '', 0, 'sites/all/modules/contrib/cck/includes/content.admin.inc'),
 ('admin/content/node-type/monster', '', '', 'user_access', 'a:1:{i:0;s:24:"administer content types";}', 'drupal_get_form', 'a:2:{i:0;s:14:"node_type_form";i:1;O:8:"stdClass":14:{s:4:"type";s:7:"monster";s:4:"name";s:7:"Monster";s:6:"module";s:4:"node";s:11:"description";s:0:"";s:4:"help";s:0:"";s:9:"has_title";s:1:"1";s:11:"title_label";s:5:"Title";s:8:"has_body";s:1:"1";s:10:"body_label";s:4:"Body";s:14:"min_word_count";s:1:"0";s:6:"custom";s:1:"1";s:8:"modified";s:1:"1";s:6:"locked";s:1:"0";s:9:"orig_type";s:0:"";}}', 15, 4, '', 'admin/content/node-type/monster', 'Monster', 't', '', 4, '', '', '', 0, 'modules/node/content_types.inc'),
 ('admin/content/node-type/monster/delete', '', '', 'user_access', 'a:1:{i:0;s:24:"administer content types";}', 'drupal_get_form', 'a:2:{i:0;s:24:"node_type_delete_confirm";i:1;O:8:"stdClass":14:{s:4:"type";s:7:"monster";s:4:"name";s:7:"Monster";s:6:"module";s:4:"node";s:11:"description";s:0:"";s:4:"help";s:0:"";s:9:"has_title";s:1:"1";s:11:"title_label";s:5:"Title";s:8:"has_body";s:1:"1";s:10:"body_label";s:4:"Body";s:14:"min_word_count";s:1:"0";s:6:"custom";s:1:"1";s:8:"modified";s:1:"1";s:6:"locked";s:1:"0";s:9:"orig_type";s:0:"";}}', 31, 5, '', 'admin/content/node-type/monster/delete', 'Delete', 't', '', 4, '', '', '', 0, 'modules/node/content_types.inc'),
 ('admin/content/node-type/monster/display', '', '', 'user_access', 'a:1:{i:0;s:24:"administer content types";}', 'drupal_get_form', 'a:2:{i:0;s:29:"content_display_overview_form";i:1;s:7:"monster";}', 31, 5, 'admin/content/node-type/monster', 'admin/content/node-type/monster', 'Display fields', 't', '', 128, '', '', '', 2, 'sites/all/modules/contrib/cck/includes/content.admin.inc'),
@@ -1006,8 +1138,10 @@ INSERT INTO `menu_router` (`path`, `load_functions`, `to_arg_functions`, `access
 ('admin/content/node-type/monster/display/rss', '', '', 'user_access', 'a:1:{i:0;s:24:"administer content types";}', 'drupal_get_form', 'a:3:{i:0;s:29:"content_display_overview_form";i:1;s:7:"monster";i:2;s:3:"rss";}', 63, 6, 'admin/content/node-type/monster/display', 'admin/content/node-type/monster', 'RSS', 't', '', 128, '', '', '', 1, 'sites/all/modules/contrib/cck/includes/content.admin.inc'),
 ('admin/content/node-type/monster/edit', '', '', 'user_access', 'a:1:{i:0;s:24:"administer content types";}', 'drupal_get_form', 'a:2:{i:0;s:14:"node_type_form";i:1;O:8:"stdClass":14:{s:4:"type";s:7:"monster";s:4:"name";s:7:"Monster";s:6:"module";s:4:"node";s:11:"description";s:0:"";s:4:"help";s:0:"";s:9:"has_title";s:1:"1";s:11:"title_label";s:5:"Title";s:8:"has_body";s:1:"1";s:10:"body_label";s:4:"Body";s:14:"min_word_count";s:1:"0";s:6:"custom";s:1:"1";s:8:"modified";s:1:"1";s:6:"locked";s:1:"0";s:9:"orig_type";s:0:"";}}', 31, 5, 'admin/content/node-type/monster', 'admin/content/node-type/monster', 'Edit', 't', '', 136, '', '', '', 0, 'modules/node/content_types.inc'),
 ('admin/content/node-type/monster/fields', '', '', 'user_access', 'a:1:{i:0;s:24:"administer content types";}', 'drupal_get_form', 'a:2:{i:0;s:27:"content_field_overview_form";i:1;s:7:"monster";}', 31, 5, 'admin/content/node-type/monster', 'admin/content/node-type/monster', 'Manage fields', 't', '', 128, '', '', '', 1, 'sites/all/modules/contrib/cck/includes/content.admin.inc'),
-('admin/content/node-type/monster/fields/field_image', '', '', 'user_access', 'a:1:{i:0;s:24:"administer content types";}', 'drupal_get_form', 'a:3:{i:0;s:23:"content_field_edit_form";i:1;s:7:"monster";i:2;s:11:"field_image";}', 63, 6, 'admin/content/node-type/monster/fields', 'admin/content/node-type/monster', 'Image', 't', '', 128, '', '', '', 0, 'sites/all/modules/contrib/cck/includes/content.admin.inc'),
-('admin/content/node-type/monster/fields/field_image/remove', '', '', 'user_access', 'a:1:{i:0;s:24:"administer content types";}', 'drupal_get_form', 'a:3:{i:0;s:25:"content_field_remove_form";i:1;s:7:"monster";i:2;s:11:"field_image";}', 127, 7, '', 'admin/content/node-type/monster/fields/field_image/remove', 'Remove field', 't', '', 4, '', '', '', 0, 'sites/all/modules/contrib/cck/includes/content.admin.inc'),
+('admin/content/node-type/monster/fields/field_doc', '', '', 'user_access', 'a:1:{i:0;s:24:"administer content types";}', 'drupal_get_form', 'a:3:{i:0;s:23:"content_field_edit_form";i:1;s:7:"monster";i:2;s:9:"field_doc";}', 63, 6, 'admin/content/node-type/monster/fields', 'admin/content/node-type/monster', 'Doc', 't', '', 128, '', '', '', 0, 'sites/all/modules/contrib/cck/includes/content.admin.inc'),
+('admin/content/node-type/monster/fields/field_doc/remove', '', '', 'user_access', 'a:1:{i:0;s:24:"administer content types";}', 'drupal_get_form', 'a:3:{i:0;s:25:"content_field_remove_form";i:1;s:7:"monster";i:2;s:9:"field_doc";}', 127, 7, '', 'admin/content/node-type/monster/fields/field_doc/remove', 'Remove field', 't', '', 4, '', '', '', 0, 'sites/all/modules/contrib/cck/includes/content.admin.inc'),
+('admin/content/node-type/monster/fields/field_images', '', '', 'user_access', 'a:1:{i:0;s:24:"administer content types";}', 'drupal_get_form', 'a:3:{i:0;s:23:"content_field_edit_form";i:1;s:7:"monster";i:2;s:12:"field_images";}', 63, 6, 'admin/content/node-type/monster/fields', 'admin/content/node-type/monster', 'Images', 't', '', 128, '', '', '', 0, 'sites/all/modules/contrib/cck/includes/content.admin.inc'),
+('admin/content/node-type/monster/fields/field_images/remove', '', '', 'user_access', 'a:1:{i:0;s:24:"administer content types";}', 'drupal_get_form', 'a:3:{i:0;s:25:"content_field_remove_form";i:1;s:7:"monster";i:2;s:12:"field_images";}', 127, 7, '', 'admin/content/node-type/monster/fields/field_images/remove', 'Remove field', 't', '', 4, '', '', '', 0, 'sites/all/modules/contrib/cck/includes/content.admin.inc'),
 ('admin/content/node-type/monster/fields/field_lair', '', '', 'user_access', 'a:1:{i:0;s:24:"administer content types";}', 'drupal_get_form', 'a:3:{i:0;s:23:"content_field_edit_form";i:1;s:7:"monster";i:2;s:10:"field_lair";}', 63, 6, 'admin/content/node-type/monster/fields', 'admin/content/node-type/monster', 'Lair', 't', '', 128, '', '', '', 0, 'sites/all/modules/contrib/cck/includes/content.admin.inc'),
 ('admin/content/node-type/monster/fields/field_lair/remove', '', '', 'user_access', 'a:1:{i:0;s:24:"administer content types";}', 'drupal_get_form', 'a:3:{i:0;s:25:"content_field_remove_form";i:1;s:7:"monster";i:2;s:10:"field_lair";}', 127, 7, '', 'admin/content/node-type/monster/fields/field_lair/remove', 'Remove field', 't', '', 4, '', '', '', 0, 'sites/all/modules/contrib/cck/includes/content.admin.inc'),
 ('admin/content/node-type/monster/fields/field_teeth', '', '', 'user_access', 'a:1:{i:0;s:24:"administer content types";}', 'drupal_get_form', 'a:3:{i:0;s:23:"content_field_edit_form";i:1;s:7:"monster";i:2;s:11:"field_teeth";}', 63, 6, 'admin/content/node-type/monster/fields', 'admin/content/node-type/monster', 'Teeth', 't', '', 128, '', '', '', 0, 'sites/all/modules/contrib/cck/includes/content.admin.inc'),
@@ -1021,12 +1155,12 @@ INSERT INTO `menu_router` (`path`, `load_functions`, `to_arg_functions`, `access
 ('admin/content/node-type/page/display/rss', '', '', 'user_access', 'a:1:{i:0;s:24:"administer content types";}', 'drupal_get_form', 'a:3:{i:0;s:29:"content_display_overview_form";i:1;s:4:"page";i:2;s:3:"rss";}', 63, 6, 'admin/content/node-type/page/display', 'admin/content/node-type/page', 'RSS', 't', '', 128, '', '', '', 1, 'sites/all/modules/contrib/cck/includes/content.admin.inc'),
 ('admin/content/node-type/page/edit', '', '', 'user_access', 'a:1:{i:0;s:24:"administer content types";}', 'drupal_get_form', 'a:2:{i:0;s:14:"node_type_form";i:1;O:8:"stdClass":14:{s:4:"type";s:4:"page";s:4:"name";s:4:"Page";s:6:"module";s:4:"node";s:11:"description";s:296:"A <em>page</em>, similar in form to a <em>story</em>, is a simple method for creating and displaying information that rarely changes, such as an "About us" section of a website. By default, a <em>page</em> entry does not allow visitor comments and is not featured on the site''s initial home page.";s:4:"help";s:0:"";s:9:"has_title";s:1:"1";s:11:"title_label";s:5:"Title";s:8:"has_body";s:1:"1";s:10:"body_label";s:4:"Body";s:14:"min_word_count";s:1:"0";s:6:"custom";s:1:"1";s:8:"modified";s:1:"1";s:6:"locked";s:1:"0";s:9:"orig_type";s:4:"page";}}', 31, 5, 'admin/content/node-type/page', 'admin/content/node-type/page', 'Edit', 't', '', 136, '', '', '', 0, 'modules/node/content_types.inc'),
 ('admin/content/node-type/page/fields', '', '', 'user_access', 'a:1:{i:0;s:24:"administer content types";}', 'drupal_get_form', 'a:2:{i:0;s:27:"content_field_overview_form";i:1;s:4:"page";}', 31, 5, 'admin/content/node-type/page', 'admin/content/node-type/page', 'Manage fields', 't', '', 128, '', '', '', 1, 'sites/all/modules/contrib/cck/includes/content.admin.inc'),
-('admin/content/node-type/story', '', '', 'user_access', 'a:1:{i:0;s:24:"administer content types";}', 'drupal_get_form', 'a:2:{i:0;s:14:"node_type_form";i:1;O:8:"stdClass":14:{s:4:"type";s:5:"story";s:4:"name";s:5:"Story";s:6:"module";s:4:"node";s:11:"description";s:392:"A <em>story</em>, similar in form to a <em>page</em>, is ideal for creating and displaying content that informs or engages website visitors. Press releases, site announcements, and informal blog-like entries may all be created with a <em>story</em> entry. By default, a <em>story</em> entry is automatically featured on the site''s initial home page, and provides the ability to post comments.";s:4:"help";s:0:"";s:9:"has_title";s:1:"1";s:11:"title_label";s:5:"Title";s:8:"has_body";s:1:"1";s:10:"body_label";s:4:"Body";s:14:"min_word_count";s:1:"0";s:6:"custom";s:1:"1";s:8:"modified";s:1:"1";s:6:"locked";s:1:"0";s:9:"orig_type";s:5:"story";}}', 15, 4, '', 'admin/content/node-type/story', 'Story', 't', '', 4, '', '', '', 0, 'modules/node/content_types.inc'),
+('admin/content/node-type/story', '', '', 'user_access', 'a:1:{i:0;s:24:"administer content types";}', 'drupal_get_form', 'a:2:{i:0;s:14:"node_type_form";i:1;O:8:"stdClass":14:{s:4:"type";s:5:"story";s:4:"name";s:5:"Story";s:6:"module";s:4:"node";s:11:"description";s:392:"A <em>story</em>, similar in form to a <em>page</em>, is ideal for creating and displaying content that informs or engages website visitors. Press releases, site announcements, and informal blog-like entries may all be created with a <em>story</em> entry. By default, a <em>story</em> entry is automatically featured on the site''s initial home page, and provides the ability to post comments.";s:4:"help";s:0:"";s:9:"has_title";s:1:"1";s:11:"title_label";s:5:"Title";s:8:"has_body";s:1:"1";s:10:"body_label";s:4:"Body";s:14:"min_word_count";s:1:"0";s:6:"custom";s:1:"1";s:8:"modified";s:1:"1";s:6:"locked";s:1:"0";s:9:"orig_type";s:5:"story";}}', 15, 4, '', 'admin/content/node-type/story', 'Story', 't', '', 4, '', '', '', 0, 'modules/node/content_types.inc');
+INSERT INTO `menu_router` (`path`, `load_functions`, `to_arg_functions`, `access_callback`, `access_arguments`, `page_callback`, `page_arguments`, `fit`, `number_parts`, `tab_parent`, `tab_root`, `title`, `title_callback`, `title_arguments`, `type`, `block_callback`, `description`, `position`, `weight`, `file`) VALUES
 ('admin/content/node-type/story/delete', '', '', 'user_access', 'a:1:{i:0;s:24:"administer content types";}', 'drupal_get_form', 'a:2:{i:0;s:24:"node_type_delete_confirm";i:1;O:8:"stdClass":14:{s:4:"type";s:5:"story";s:4:"name";s:5:"Story";s:6:"module";s:4:"node";s:11:"description";s:392:"A <em>story</em>, similar in form to a <em>page</em>, is ideal for creating and displaying content that informs or engages website visitors. Press releases, site announcements, and informal blog-like entries may all be created with a <em>story</em> entry. By default, a <em>story</em> entry is automatically featured on the site''s initial home page, and provides the ability to post comments.";s:4:"help";s:0:"";s:9:"has_title";s:1:"1";s:11:"title_label";s:5:"Title";s:8:"has_body";s:1:"1";s:10:"body_label";s:4:"Body";s:14:"min_word_count";s:1:"0";s:6:"custom";s:1:"1";s:8:"modified";s:1:"1";s:6:"locked";s:1:"0";s:9:"orig_type";s:5:"story";}}', 31, 5, '', 'admin/content/node-type/story/delete', 'Delete', 't', '', 4, '', '', '', 0, 'modules/node/content_types.inc'),
 ('admin/content/node-type/story/display', '', '', 'user_access', 'a:1:{i:0;s:24:"administer content types";}', 'drupal_get_form', 'a:2:{i:0;s:29:"content_display_overview_form";i:1;s:5:"story";}', 31, 5, 'admin/content/node-type/story', 'admin/content/node-type/story', 'Display fields', 't', '', 128, '', '', '', 2, 'sites/all/modules/contrib/cck/includes/content.admin.inc'),
 ('admin/content/node-type/story/display/basic', '', '', 'user_access', 'a:1:{i:0;s:24:"administer content types";}', 'drupal_get_form', 'a:3:{i:0;s:29:"content_display_overview_form";i:1;s:5:"story";i:2;s:5:"basic";}', 63, 6, 'admin/content/node-type/story/display', 'admin/content/node-type/story', 'Basic', 't', '', 136, '', '', '', 0, 'sites/all/modules/contrib/cck/includes/content.admin.inc'),
-('admin/content/node-type/story/display/rss', '', '', 'user_access', 'a:1:{i:0;s:24:"administer content types";}', 'drupal_get_form', 'a:3:{i:0;s:29:"content_display_overview_form";i:1;s:5:"story";i:2;s:3:"rss";}', 63, 6, 'admin/content/node-type/story/display', 'admin/content/node-type/story', 'RSS', 't', '', 128, '', '', '', 1, 'sites/all/modules/contrib/cck/includes/content.admin.inc');
-INSERT INTO `menu_router` (`path`, `load_functions`, `to_arg_functions`, `access_callback`, `access_arguments`, `page_callback`, `page_arguments`, `fit`, `number_parts`, `tab_parent`, `tab_root`, `title`, `title_callback`, `title_arguments`, `type`, `block_callback`, `description`, `position`, `weight`, `file`) VALUES
+('admin/content/node-type/story/display/rss', '', '', 'user_access', 'a:1:{i:0;s:24:"administer content types";}', 'drupal_get_form', 'a:3:{i:0;s:29:"content_display_overview_form";i:1;s:5:"story";i:2;s:3:"rss";}', 63, 6, 'admin/content/node-type/story/display', 'admin/content/node-type/story', 'RSS', 't', '', 128, '', '', '', 1, 'sites/all/modules/contrib/cck/includes/content.admin.inc'),
 ('admin/content/node-type/story/edit', '', '', 'user_access', 'a:1:{i:0;s:24:"administer content types";}', 'drupal_get_form', 'a:2:{i:0;s:14:"node_type_form";i:1;O:8:"stdClass":14:{s:4:"type";s:5:"story";s:4:"name";s:5:"Story";s:6:"module";s:4:"node";s:11:"description";s:392:"A <em>story</em>, similar in form to a <em>page</em>, is ideal for creating and displaying content that informs or engages website visitors. Press releases, site announcements, and informal blog-like entries may all be created with a <em>story</em> entry. By default, a <em>story</em> entry is automatically featured on the site''s initial home page, and provides the ability to post comments.";s:4:"help";s:0:"";s:9:"has_title";s:1:"1";s:11:"title_label";s:5:"Title";s:8:"has_body";s:1:"1";s:10:"body_label";s:4:"Body";s:14:"min_word_count";s:1:"0";s:6:"custom";s:1:"1";s:8:"modified";s:1:"1";s:6:"locked";s:1:"0";s:9:"orig_type";s:5:"story";}}', 31, 5, 'admin/content/node-type/story', 'admin/content/node-type/story', 'Edit', 't', '', 136, '', '', '', 0, 'modules/node/content_types.inc'),
 ('admin/content/node-type/story/fields', '', '', 'user_access', 'a:1:{i:0;s:24:"administer content types";}', 'drupal_get_form', 'a:2:{i:0;s:27:"content_field_overview_form";i:1;s:5:"story";}', 31, 5, 'admin/content/node-type/story', 'admin/content/node-type/story', 'Manage fields', 't', '', 128, '', '', '', 1, 'sites/all/modules/contrib/cck/includes/content.admin.inc'),
 ('admin/content/node/overview', '', '', 'user_access', 'a:1:{i:0;s:16:"administer nodes";}', 'drupal_get_form', 'a:1:{i:0;s:18:"node_admin_content";}', 15, 4, 'admin/content/node', 'admin/content/node', 'List', 't', '', 136, '', '', '', -10, 'modules/node/node.admin.inc'),
@@ -1052,6 +1186,7 @@ INSERT INTO `menu_router` (`path`, `load_functions`, `to_arg_functions`, `access
 ('admin/help/devel', '', '', 'user_access', 'a:1:{i:0;s:27:"access administration pages";}', 'help_page', 'a:1:{i:0;i:2;}', 7, 3, '', 'admin/help/devel', 'devel', 't', '', 4, '', '', '', 0, 'modules/help/help.admin.inc'),
 ('admin/help/filter', '', '', 'user_access', 'a:1:{i:0;s:27:"access administration pages";}', 'help_page', 'a:1:{i:0;i:2;}', 7, 3, '', 'admin/help/filter', 'filter', 't', '', 4, '', '', '', 0, 'modules/help/help.admin.inc'),
 ('admin/help/help', '', '', 'user_access', 'a:1:{i:0;s:27:"access administration pages";}', 'help_page', 'a:1:{i:0;i:2;}', 7, 3, '', 'admin/help/help', 'help', 't', '', 4, '', '', '', 0, 'modules/help/help.admin.inc'),
+('admin/help/location', '', '', 'user_access', 'a:1:{i:0;s:27:"access administration pages";}', 'help_page', 'a:1:{i:0;i:2;}', 7, 3, '', 'admin/help/location', 'location', 't', '', 4, '', '', '', 0, 'modules/help/help.admin.inc'),
 ('admin/help/menu', '', '', 'user_access', 'a:1:{i:0;s:27:"access administration pages";}', 'help_page', 'a:1:{i:0;i:2;}', 7, 3, '', 'admin/help/menu', 'menu', 't', '', 4, '', '', '', 0, 'modules/help/help.admin.inc'),
 ('admin/help/node', '', '', 'user_access', 'a:1:{i:0;s:27:"access administration pages";}', 'help_page', 'a:1:{i:0;i:2;}', 7, 3, '', 'admin/help/node', 'node', 't', '', 4, '', '', '', 0, 'modules/help/help.admin.inc'),
 ('admin/help/system', '', '', 'user_access', 'a:1:{i:0;s:27:"access administration pages";}', 'help_page', 'a:1:{i:0;i:2;}', 7, 3, '', 'admin/help/system', 'system', 't', '', 4, '', '', '', 0, 'modules/help/help.admin.inc'),
@@ -1093,6 +1228,12 @@ INSERT INTO `menu_router` (`path`, `load_functions`, `to_arg_functions`, `access
 ('admin/settings/filters/delete', '', '', 'user_access', 'a:1:{i:0;s:18:"administer filters";}', 'drupal_get_form', 'a:1:{i:0;s:19:"filter_admin_delete";}', 15, 4, '', 'admin/settings/filters/delete', 'Delete input format', 't', '', 4, '', '', '', 0, 'modules/filter/filter.admin.inc'),
 ('admin/settings/filters/list', '', '', 'user_access', 'a:1:{i:0;s:18:"administer filters";}', 'drupal_get_form', 'a:1:{i:0;s:21:"filter_admin_overview";}', 15, 4, 'admin/settings/filters', 'admin/settings/filters', 'List', 't', '', 136, '', '', '', 0, 'modules/filter/filter.admin.inc'),
 ('admin/settings/image-toolkit', '', '', 'user_access', 'a:1:{i:0;s:29:"administer site configuration";}', 'drupal_get_form', 'a:1:{i:0;s:29:"system_image_toolkit_settings";}', 7, 3, '', 'admin/settings/image-toolkit', 'Image toolkit', 't', '', 6, '', 'Choose which image toolkit to use if you have installed optional toolkits.', '', 0, 'modules/system/system.admin.inc'),
+('admin/settings/location', '', '', 'user_access', 'a:1:{i:0;s:29:"administer site configuration";}', 'drupal_get_form', 'a:1:{i:0;s:23:"location_admin_settings";}', 7, 3, '', 'admin/settings/location', 'Location', 't', '', 6, '', 'Settings for Location module', '', 0, 'sites/all/modules/contrib/location/location.admin.inc'),
+('admin/settings/location/geocoding', '', '', 'user_access', 'a:1:{i:0;s:29:"administer site configuration";}', 'drupal_get_form', 'a:1:{i:0;s:31:"location_geocoding_options_form";}', 15, 4, 'admin/settings/location', 'admin/settings/location', 'Geocoding options', 't', '', 128, '', '', '', 2, 'sites/all/modules/contrib/location/location.admin.inc'),
+('admin/settings/location/geocoding/%/%', 'a:2:{i:4;N;i:5;N;}', '', 'user_access', 'a:1:{i:0;s:29:"administer site configuration";}', 'location_geocoding_parameters_page', 'a:2:{i:0;i:4;i:1;i:5;}', 60, 6, '', 'admin/settings/location/geocoding/%/%', '', 't', '', 4, '', '', '', 0, ''),
+('admin/settings/location/main', '', '', 'user_access', 'a:1:{i:0;s:29:"administer site configuration";}', 'drupal_get_form', 'a:1:{i:0;s:23:"location_admin_settings";}', 15, 4, 'admin/settings/location', 'admin/settings/location', 'Main settings', 't', '', 136, '', '', '', 0, 'sites/all/modules/contrib/location/location.admin.inc'),
+('admin/settings/location/maplinking', '', '', 'user_access', 'a:1:{i:0;s:29:"administer site configuration";}', 'drupal_get_form', 'a:1:{i:0;s:30:"location_map_link_options_form";}', 15, 4, 'admin/settings/location', 'admin/settings/location', 'Map links', 't', '', 128, '', '', '', 1, 'sites/all/modules/contrib/location/location.admin.inc'),
+('admin/settings/location/util', '', '', 'user_access', 'a:1:{i:0;s:29:"administer site configuration";}', 'drupal_get_form', 'a:1:{i:0;s:18:"location_util_form";}', 15, 4, 'admin/settings/location', 'admin/settings/location', 'Location utilities', 't', '', 128, '', '', '', 3, 'sites/all/modules/contrib/location/location.admin.inc'),
 ('admin/settings/logging', '', '', 'user_access', 'a:1:{i:0;s:29:"administer site configuration";}', 'system_logging_overview', 'a:0:{}', 7, 3, '', 'admin/settings/logging', 'Logging and alerts', 't', '', 6, '', 'Settings for logging and alerts modules. Various modules can route Drupal''s system events to different destination, such as syslog, database, email, ...etc.', '', 0, 'modules/system/system.admin.inc'),
 ('admin/settings/logging/dblog', '', '', 'user_access', 'a:1:{i:0;s:29:"administer site configuration";}', 'drupal_get_form', 'a:1:{i:0;s:20:"dblog_admin_settings";}', 15, 4, '', 'admin/settings/logging/dblog', 'Database logging', 't', '', 6, '', 'Settings for logging to the Drupal database logs. This is the most common method for small to medium sites on shared hosting. The logs are viewable from the admin pages.', '', 0, 'modules/dblog/dblog.admin.inc'),
 ('admin/settings/performance', '', '', 'user_access', 'a:1:{i:0;s:29:"administer site configuration";}', 'drupal_get_form', 'a:1:{i:0;s:27:"system_performance_settings";}', 7, 3, '', 'admin/settings/performance', 'Performance', 't', '', 6, '', 'Enable or disable page caching for anonymous users and set CSS and JS bandwidth optimization options.', '', 0, 'modules/system/system.admin.inc'),
@@ -1137,6 +1278,8 @@ INSERT INTO `menu_router` (`path`, `load_functions`, `to_arg_functions`, `access
 ('filefield/progress', '', '', 'user_access', 'a:1:{i:0;s:14:"access content";}', 'filefield_progress', 'a:0:{}', 3, 2, '', 'filefield/progress', '', 't', '', 4, '', '', '', 0, ''),
 ('filter/tips', '', '', '1', 'a:0:{}', 'filter_tips_long', 'a:0:{}', 3, 2, '', 'filter/tips', 'Compose tips', 't', '', 20, '', '', '', 0, 'modules/filter/filter.pages.inc'),
 ('integrity/tables/create', '', '', 'user_access', 'a:1:{i:0;s:29:"administer site configuration";}', 'integrity_create_tables', 'a:0:{}', 7, 3, '', 'integrity/tables/create', 'Create Missing Vineyard Tables', 't', '', 4, '', '', '', 0, ''),
+('location/autocomplete', '', '', 'user_access', 'a:1:{i:0;s:14:"access content";}', '_location_autocomplete', 'a:0:{}', 3, 2, '', 'location/autocomplete', '', 't', '', 4, '', '', '', 0, ''),
+('location/fetch_provinces', '', '', 'user_access', 'a:1:{i:0;s:14:"access content";}', '_location_fetch_provinces', 'a:0:{}', 3, 2, '', 'location/fetch_provinces', '', 't', '', 4, '', '', '', 0, ''),
 ('logout', '', '', 'user_is_logged_in', 'a:0:{}', 'user_logout', 'a:0:{}', 1, 1, '', 'logout', 'Log out', 't', '', 6, '', '', '', 10, 'modules/user/user.pages.inc'),
 ('node', '', '', 'user_access', 'a:1:{i:0;s:14:"access content";}', 'node_page_default', 'a:0:{}', 1, 1, '', 'node', 'Content', 't', '', 4, '', '', '', 0, ''),
 ('node/%', 'a:1:{i:1;s:9:"node_load";}', '', 'node_access', 'a:2:{i:0;s:4:"view";i:1;i:1;}', 'node_page_view', 'a:1:{i:0;i:1;}', 2, 2, '', 'node/%', '', 'node_page_title', 'a:1:{i:0;i:1;}', 4, '', '', '', 0, ''),
@@ -1214,15 +1357,16 @@ CREATE TABLE IF NOT EXISTS `node` (
   KEY `uid` (`uid`),
   KEY `tnid` (`tnid`),
   KEY `translate` (`translate`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `node`
 --
 
 INSERT INTO `node` (`nid`, `vid`, `type`, `language`, `title`, `uid`, `status`, `created`, `changed`, `comment`, `promote`, `moderate`, `sticky`, `tnid`, `translate`) VALUES
-(1, 1, 'monster', '', 'Dragon', 1, 1, 1362434958, 1362435028, 2, 1, 0, 0, 0, 0),
-(2, 2, 'monster', '', 'Ogre', 1, 1, 1362435140, 1362435140, 2, 1, 0, 0, 0, 0);
+(1, 1, 'monster', '', 'Dragon', 1, 1, 1362434958, 1362589550, 2, 1, 0, 0, 0, 0),
+(2, 2, 'monster', '', 'Ogre', 1, 1, 1362435140, 1362589330, 2, 1, 0, 0, 0, 0),
+(3, 3, 'lair', '', 'Treasure Cave', 1, 1, 1362589469, 1362589997, 2, 1, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -1271,7 +1415,8 @@ CREATE TABLE IF NOT EXISTS `node_comment_statistics` (
 
 INSERT INTO `node_comment_statistics` (`nid`, `last_comment_timestamp`, `last_comment_name`, `last_comment_uid`, `comment_count`) VALUES
 (1, 1362434958, NULL, 1, 0),
-(2, 1362435140, NULL, 1, 0);
+(2, 1362435140, NULL, 1, 0),
+(3, 1362589469, NULL, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -1306,15 +1451,16 @@ CREATE TABLE IF NOT EXISTS `node_revisions` (
   PRIMARY KEY (`vid`),
   KEY `nid` (`nid`),
   KEY `uid` (`uid`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `node_revisions`
 --
 
 INSERT INTO `node_revisions` (`nid`, `vid`, `uid`, `title`, `body`, `teaser`, `log`, `timestamp`, `format`) VALUES
-(1, 1, 1, 'Dragon', '', '', '', 1362435028, 1),
-(2, 2, 1, 'Ogre', '', '', '', 1362435140, 1);
+(1, 1, 1, 'Dragon', '', '', '', 1362589550, 1),
+(2, 2, 1, 'Ogre', '', '', '', 1362589330, 1),
+(3, 3, 1, 'Treasure Cave', '', '', '', 1362589997, 1);
 
 -- --------------------------------------------------------
 
@@ -1440,17 +1586,21 @@ INSERT INTO `sessions` (`uid`, `sid`, `hostname`, `timestamp`, `cache`, `session
 (0, '581glrbml7k1akc9c6fvjc5cq6', '127.0.0.1', 1362348764, 0, 'messages|a:1:{s:5:"error";a:1:{i:0;s:140:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\inc\\Delete.inc on line 20.";}}'),
 (0, '5ade9omf0f1ac20udv8qq942a4', '127.0.0.1', 1362247208, 0, 'messages|a:1:{s:5:"error";a:3:{i:0;s:148:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\test\\Ground_Fixture.inc on line 6.";i:1;s:148:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\test\\Ground_Fixture.inc on line 6.";i:2;s:148:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\test\\Ground_Fixture.inc on line 6.";}}'),
 (0, '68adbsmcv8jckjkta30bcrrt12', '127.0.0.1', 1362267963, 0, 'messages|a:1:{s:5:"error";a:3:{i:0;s:140:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\inc\\Delete.inc on line 20.";i:1;s:140:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\inc\\Delete.inc on line 20.";i:2;s:140:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\inc\\Delete.inc on line 20.";}}'),
-(1, '716877dfefb4tb3gs96a8g8sg5', '127.0.0.1', 1362458060, 0, 'dblog_overview_filter|a:0:{}'),
+(0, '6pfstacs1snlnd62g9vrdtthc2', '127.0.0.1', 1362532331, 0, 'messages|a:1:{s:5:"error";a:6:{i:0;s:265:"warning: Missing argument 2 for Trellis::__construct(), called in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\inc\\Link_Trellis.inc on line 17 and defined in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\inc\\Trellis.inc on line 175.";i:1;s:165:"warning: array_key_exists() expects parameter 2 to be array, null given in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\inc\\Trellis.inc on line 125.";i:2;s:165:"warning: array_key_exists() expects parameter 2 to be array, null given in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\inc\\Trellis.inc on line 125.";i:3;s:265:"warning: Missing argument 2 for Trellis::__construct(), called in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\inc\\Link_Trellis.inc on line 17 and defined in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\inc\\Trellis.inc on line 175.";i:4;s:165:"warning: array_key_exists() expects parameter 2 to be array, null given in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\inc\\Trellis.inc on line 125.";i:5;s:165:"warning: array_key_exists() expects parameter 2 to be array, null given in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\inc\\Trellis.inc on line 125.";}}'),
+(1, '716877dfefb4tb3gs96a8g8sg5', '127.0.0.1', 1362589998, 0, 'dblog_overview_filter|a:0:{}node_overview_filter|a:0:{}'),
 (0, '7f71kotm31eahspkf4ekmei8k4', '127.0.0.1', 1362254967, 0, 'messages|a:1:{s:5:"error";a:1:{i:0;s:148:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\test\\Ground_Fixture.inc on line 6.";}}'),
 (0, '7vd66ft4aba5bi4udsdsrgf4d7', '127.0.0.1', 1362247795, 0, 'messages|a:1:{s:5:"error";a:9:{i:0;s:148:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\test\\Ground_Fixture.inc on line 6.";i:1;s:148:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\test\\Ground_Fixture.inc on line 6.";i:2;s:148:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\test\\Ground_Fixture.inc on line 6.";i:3;s:148:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\test\\Ground_Fixture.inc on line 6.";i:4;s:148:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\test\\Ground_Fixture.inc on line 6.";i:5;s:148:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\test\\Ground_Fixture.inc on line 6.";i:6;s:148:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\test\\Ground_Fixture.inc on line 6.";i:7;s:148:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\test\\Ground_Fixture.inc on line 6.";i:8;s:148:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\test\\Ground_Fixture.inc on line 6.";}}'),
+(0, '8ib9mtqivkr55ohvepp92g17h0', '127.0.0.1', 1362547189, 0, 'messages|a:1:{s:5:"error";a:1:{i:0;s:140:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\inc\\Delete.inc on line 20.";}}'),
 (0, '8qkbq065src0pkf2a2n0jltmj7', '127.0.0.1', 1362508227, 0, 'messages|a:1:{s:5:"error";a:1:{i:0;s:140:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\inc\\Delete.inc on line 20.";}}'),
 (0, '8s13jepnc9cb2q3n25g3uboof6', '127.0.0.1', 1362247613, 0, 'messages|a:1:{s:5:"error";a:4:{i:0;s:148:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\test\\Ground_Fixture.inc on line 6.";i:1;s:148:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\test\\Ground_Fixture.inc on line 6.";i:2;s:148:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\test\\Ground_Fixture.inc on line 6.";i:3;s:148:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\test\\Ground_Fixture.inc on line 6.";}}'),
 (0, '9s0i400fnirdus1npr491vp5u3', '127.0.0.1', 1362351753, 0, 'messages|a:1:{s:5:"error";a:7:{i:0;s:208:"warning: preg_replace(): Compilation failed: missing terminating ] for character class at offset 4 in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\modules\\ground_db\\inc\\Table.inc on line 115.";i:1;s:208:"warning: preg_replace(): Compilation failed: missing terminating ] for character class at offset 4 in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\modules\\ground_db\\inc\\Table.inc on line 115.";i:2;s:208:"warning: preg_replace(): Compilation failed: missing terminating ] for character class at offset 4 in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\modules\\ground_db\\inc\\Table.inc on line 115.";i:3;s:208:"warning: preg_replace(): Compilation failed: missing terminating ] for character class at offset 4 in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\modules\\ground_db\\inc\\Table.inc on line 115.";i:4;s:208:"warning: preg_replace(): Compilation failed: missing terminating ] for character class at offset 4 in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\modules\\ground_db\\inc\\Table.inc on line 115.";i:5;s:208:"warning: preg_replace(): Compilation failed: missing terminating ] for character class at offset 4 in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\modules\\ground_db\\inc\\Table.inc on line 115.";i:6;s:208:"warning: preg_replace(): Compilation failed: missing terminating ] for character class at offset 4 in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\modules\\ground_db\\inc\\Table.inc on line 115.";}}'),
 (0, 'afh1b3ojk7jnbkv4c3sg58o1f6', '127.0.0.1', 1362508143, 0, 'messages|a:1:{s:5:"error";a:1:{i:0;s:140:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\inc\\Delete.inc on line 20.";}}'),
 (0, 'am1buvp2ktu1pq7n21n5mpsuk0', '127.0.0.1', 1362247493, 0, 'messages|a:1:{s:5:"error";a:5:{i:0;s:148:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\test\\Ground_Fixture.inc on line 6.";i:1;s:148:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\test\\Ground_Fixture.inc on line 6.";i:2;s:148:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\test\\Ground_Fixture.inc on line 6.";i:3;s:148:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\test\\Ground_Fixture.inc on line 6.";i:4;s:148:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\test\\Ground_Fixture.inc on line 6.";}}'),
+(0, 'c0929ugkco80b7sbc4s3glaao5', '127.0.0.1', 1362546844, 0, 'messages|a:1:{s:5:"error";a:9:{i:0;s:140:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\inc\\Delete.inc on line 20.";i:1;s:265:"warning: Missing argument 2 for Trellis::__construct(), called in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\inc\\Link_Trellis.inc on line 17 and defined in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\inc\\Trellis.inc on line 175.";i:2;s:165:"warning: array_key_exists() expects parameter 2 to be array, null given in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\inc\\Trellis.inc on line 125.";i:3;s:265:"warning: Missing argument 2 for Trellis::__construct(), called in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\inc\\Link_Trellis.inc on line 17 and defined in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\inc\\Trellis.inc on line 175.";i:4;s:165:"warning: array_key_exists() expects parameter 2 to be array, null given in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\inc\\Trellis.inc on line 125.";i:5;s:265:"warning: Missing argument 2 for Trellis::__construct(), called in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\inc\\Link_Trellis.inc on line 17 and defined in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\inc\\Trellis.inc on line 175.";i:6;s:165:"warning: array_key_exists() expects parameter 2 to be array, null given in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\inc\\Trellis.inc on line 125.";i:7;s:265:"warning: Missing argument 2 for Trellis::__construct(), called in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\inc\\Link_Trellis.inc on line 17 and defined in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\inc\\Trellis.inc on line 175.";i:8;s:165:"warning: array_key_exists() expects parameter 2 to be array, null given in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\inc\\Trellis.inc on line 125.";}}'),
 (0, 'd1147ud9ogf4qamclf211vq6f3', '127.0.0.1', 1362247748, 0, 'messages|a:1:{s:5:"error";a:9:{i:0;s:148:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\test\\Ground_Fixture.inc on line 6.";i:1;s:148:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\test\\Ground_Fixture.inc on line 6.";i:2;s:148:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\test\\Ground_Fixture.inc on line 6.";i:3;s:148:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\test\\Ground_Fixture.inc on line 6.";i:4;s:148:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\test\\Ground_Fixture.inc on line 6.";i:5;s:148:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\test\\Ground_Fixture.inc on line 6.";i:6;s:148:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\test\\Ground_Fixture.inc on line 6.";i:7;s:148:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\test\\Ground_Fixture.inc on line 6.";i:8;s:148:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\test\\Ground_Fixture.inc on line 6.";}}'),
 (0, 'ei2ej248gve3eqppm4kgm0no10', '127.0.0.1', 1362248027, 0, 'messages|a:1:{s:5:"error";a:9:{i:0;s:148:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\test\\Ground_Fixture.inc on line 6.";i:1;s:148:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\test\\Ground_Fixture.inc on line 6.";i:2;s:148:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\test\\Ground_Fixture.inc on line 6.";i:3;s:148:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\test\\Ground_Fixture.inc on line 6.";i:4;s:148:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\test\\Ground_Fixture.inc on line 6.";i:5;s:148:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\test\\Ground_Fixture.inc on line 6.";i:6;s:148:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\test\\Ground_Fixture.inc on line 6.";i:7;s:148:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\test\\Ground_Fixture.inc on line 6.";i:8;s:148:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\test\\Ground_Fixture.inc on line 6.";}}'),
 (0, 'f153dj9rkj6qp9f5tvvk4jal81', '127.0.0.1', 1362286939, 0, 'messages|a:1:{s:5:"error";a:1:{i:0;s:140:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\inc\\Delete.inc on line 20.";}}'),
+(0, 'fblf1nei2c7v9fr7sb32c21bo2', '127.0.0.1', 1362532343, 0, 'messages|a:1:{s:5:"error";a:6:{i:0;s:265:"warning: Missing argument 2 for Trellis::__construct(), called in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\inc\\Link_Trellis.inc on line 17 and defined in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\inc\\Trellis.inc on line 175.";i:1;s:165:"warning: array_key_exists() expects parameter 2 to be array, null given in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\inc\\Trellis.inc on line 125.";i:2;s:165:"warning: array_key_exists() expects parameter 2 to be array, null given in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\inc\\Trellis.inc on line 125.";i:3;s:265:"warning: Missing argument 2 for Trellis::__construct(), called in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\inc\\Link_Trellis.inc on line 17 and defined in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\inc\\Trellis.inc on line 175.";i:4;s:165:"warning: array_key_exists() expects parameter 2 to be array, null given in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\inc\\Trellis.inc on line 125.";i:5;s:165:"warning: array_key_exists() expects parameter 2 to be array, null given in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\inc\\Trellis.inc on line 125.";}}'),
 (0, 'fim3vsuj21ks14c068fiqoljt7', '127.0.0.1', 1362261359, 0, 'messages|a:1:{s:5:"error";a:1:{i:0;s:259:"warning: Missing argument 2 for Delete::run(), called in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\test\\tests\\Delete_Test.php on line 11 and defined in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\inc\\Delete.inc on line 8.";}}'),
 (0, 'g00bo3cpra52ro75sck5vvpgd3', '127.0.0.1', 1362268609, 0, 'messages|a:1:{s:5:"error";a:1:{i:0;s:140:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\inc\\Delete.inc on line 20.";}}'),
 (0, 'h8hma8gnl602gsgrspq70uafd2', '127.0.0.1', 1362247421, 0, 'messages|a:1:{s:5:"error";a:5:{i:0;s:148:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\test\\Ground_Fixture.inc on line 6.";i:1;s:148:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\test\\Ground_Fixture.inc on line 6.";i:2;s:148:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\test\\Ground_Fixture.inc on line 6.";i:3;s:148:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\test\\Ground_Fixture.inc on line 6.";i:4;s:148:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\test\\Ground_Fixture.inc on line 6.";}}'),
@@ -1467,17 +1617,19 @@ INSERT INTO `sessions` (`uid`, `sid`, `hostname`, `timestamp`, `cache`, `session
 (0, 'np6pa3scujuldrvfg11vbaakm4', '127.0.0.1', 1362348696, 0, 'messages|a:1:{s:5:"error";a:1:{i:0;s:140:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\inc\\Delete.inc on line 20.";}}'),
 (0, 'nt2scr1mabsokjog3847su6dp6', '127.0.0.1', 1362506043, 0, 'messages|a:1:{s:5:"error";a:1:{i:0;s:140:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\inc\\Delete.inc on line 20.";}}'),
 (0, 'ogshk6irf8k70v8a6918u3kff6', '127.0.0.1', 1362247239, 0, 'messages|a:1:{s:5:"error";a:3:{i:0;s:148:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\test\\Ground_Fixture.inc on line 6.";i:1;s:148:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\test\\Ground_Fixture.inc on line 6.";i:2;s:148:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\test\\Ground_Fixture.inc on line 6.";}}'),
-(1, 'p7pd3dpcac9f7nrphkv09rua64', '127.0.0.1', 1362436973, 0, ''),
+(1, 'p7pd3dpcac9f7nrphkv09rua64', '127.0.0.1', 1362436973, 0, '');
+INSERT INTO `sessions` (`uid`, `sid`, `hostname`, `timestamp`, `cache`, `session`) VALUES
 (0, 'pppurh4m03tkr93a0k0mha8q64', '127.0.0.1', 1362268550, 0, 'messages|a:1:{s:5:"error";a:1:{i:0;s:140:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\inc\\Delete.inc on line 20.";}}'),
+(0, 'qg16nmdolv08rsr0o7e0hqb154', '127.0.0.1', 1362546504, 0, 'messages|a:1:{s:5:"error";a:6:{i:0;s:265:"warning: Missing argument 2 for Trellis::__construct(), called in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\inc\\Link_Trellis.inc on line 17 and defined in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\inc\\Trellis.inc on line 175.";i:1;s:165:"warning: array_key_exists() expects parameter 2 to be array, null given in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\inc\\Trellis.inc on line 125.";i:2;s:165:"warning: array_key_exists() expects parameter 2 to be array, null given in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\inc\\Trellis.inc on line 125.";i:3;s:265:"warning: Missing argument 2 for Trellis::__construct(), called in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\inc\\Link_Trellis.inc on line 17 and defined in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\inc\\Trellis.inc on line 175.";i:4;s:165:"warning: array_key_exists() expects parameter 2 to be array, null given in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\inc\\Trellis.inc on line 125.";i:5;s:165:"warning: array_key_exists() expects parameter 2 to be array, null given in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\inc\\Trellis.inc on line 125.";}}'),
 (0, 'r6pmmkqtd9d90q76bi4fv5beh1', '127.0.0.1', 1362349100, 0, 'messages|a:1:{s:5:"error";a:1:{i:0;s:140:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\inc\\Delete.inc on line 20.";}}'),
+(0, 'sblbjgn9kl471skk2u6bvkeji7', '127.0.0.1', 1362546669, 0, 'messages|a:1:{s:5:"error";a:6:{i:0;s:265:"warning: Missing argument 2 for Trellis::__construct(), called in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\inc\\Link_Trellis.inc on line 17 and defined in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\inc\\Trellis.inc on line 175.";i:1;s:165:"warning: array_key_exists() expects parameter 2 to be array, null given in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\inc\\Trellis.inc on line 125.";i:2;s:165:"warning: array_key_exists() expects parameter 2 to be array, null given in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\inc\\Trellis.inc on line 125.";i:3;s:265:"warning: Missing argument 2 for Trellis::__construct(), called in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\inc\\Link_Trellis.inc on line 17 and defined in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\inc\\Trellis.inc on line 175.";i:4;s:165:"warning: array_key_exists() expects parameter 2 to be array, null given in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\inc\\Trellis.inc on line 125.";i:5;s:165:"warning: array_key_exists() expects parameter 2 to be array, null given in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\inc\\Trellis.inc on line 125.";}}'),
 (0, 'sd83376d16khl9j2dqb5acfov3', '127.0.0.1', 1362247275, 0, 'messages|a:1:{s:5:"error";a:5:{i:0;s:148:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\test\\Ground_Fixture.inc on line 6.";i:1;s:148:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\test\\Ground_Fixture.inc on line 6.";i:2;s:148:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\test\\Ground_Fixture.inc on line 6.";i:3;s:148:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\test\\Ground_Fixture.inc on line 6.";i:4;s:148:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\test\\Ground_Fixture.inc on line 6.";}}'),
 (0, 't3uvm3nr79qq1kdld1qgtfp914', '127.0.0.1', 1362268781, 0, 'messages|a:1:{s:5:"error";a:1:{i:0;s:140:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\inc\\Delete.inc on line 20.";}}'),
 (0, 't41fedbk6qud4cc8urkjf4nhp0', '127.0.0.1', 1362351737, 0, 'messages|a:1:{s:5:"error";a:1:{i:0;s:208:"warning: preg_replace(): Compilation failed: missing terminating ] for character class at offset 4 in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\modules\\ground_db\\inc\\Table.inc on line 115.";}}'),
 (0, 't7jtd2fe4a898n6hsmaiq2p6d1', '127.0.0.1', 1362348826, 0, 'messages|a:1:{s:5:"error";a:1:{i:0;s:140:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\inc\\Delete.inc on line 20.";}}'),
 (0, 'td5nqo71c9mdrbfkfft79rj3o3', '127.0.0.1', 1362261827, 0, 'messages|a:1:{s:5:"error";a:2:{i:0;s:197:"warning: PDOStatement::execute() expects parameter 1 to be array, string given in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\modules\\ground_db\\inc\\Ground_Database.inc on line 77.";i:1;s:197:"warning: PDOStatement::execute() expects parameter 1 to be array, string given in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\modules\\ground_db\\inc\\Ground_Database.inc on line 77.";}}'),
 (0, 'thlfpqkgcmu5ea3b7uub8rh7g3', '127.0.0.1', 1362247949, 0, 'messages|a:1:{s:5:"error";a:2:{i:0;s:148:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\test\\Ground_Fixture.inc on line 6.";i:1;s:148:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\test\\Ground_Fixture.inc on line 6.";}}'),
-(0, 'tp1722th2nucknrpgsfhcde901', '127.0.0.1', 1362268165, 0, 'messages|a:1:{s:5:"error";a:3:{i:0;s:140:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\inc\\Delete.inc on line 20.";i:1;s:140:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\inc\\Delete.inc on line 20.";i:2;s:140:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\inc\\Delete.inc on line 20.";}}');
-INSERT INTO `sessions` (`uid`, `sid`, `hostname`, `timestamp`, `cache`, `session`) VALUES
+(0, 'tp1722th2nucknrpgsfhcde901', '127.0.0.1', 1362268165, 0, 'messages|a:1:{s:5:"error";a:3:{i:0;s:140:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\inc\\Delete.inc on line 20.";i:1;s:140:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\inc\\Delete.inc on line 20.";i:2;s:140:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\inc\\Delete.inc on line 20.";}}'),
 (0, 'tpqgdtnem3uej956ga52svk856', '127.0.0.1', 1362247968, 0, 'messages|a:1:{s:5:"error";a:9:{i:0;s:148:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\test\\Ground_Fixture.inc on line 6.";i:1;s:148:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\test\\Ground_Fixture.inc on line 6.";i:2;s:148:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\test\\Ground_Fixture.inc on line 6.";i:3;s:148:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\test\\Ground_Fixture.inc on line 6.";i:4;s:148:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\test\\Ground_Fixture.inc on line 6.";i:5;s:148:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\test\\Ground_Fixture.inc on line 6.";i:6;s:148:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\test\\Ground_Fixture.inc on line 6.";i:7;s:148:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\test\\Ground_Fixture.inc on line 6.";i:8;s:148:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\test\\Ground_Fixture.inc on line 6.";}}'),
 (0, 'vv8g3dm9dlg4ddg5igih6gvf10', '127.0.0.1', 1362247695, 0, 'messages|a:1:{s:5:"error";a:9:{i:0;s:148:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\test\\Ground_Fixture.inc on line 6.";i:1;s:148:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\test\\Ground_Fixture.inc on line 6.";i:2;s:148:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\test\\Ground_Fixture.inc on line 6.";i:3;s:148:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\test\\Ground_Fixture.inc on line 6.";i:4;s:148:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\test\\Ground_Fixture.inc on line 6.";i:5;s:148:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\test\\Ground_Fixture.inc on line 6.";i:6;s:148:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\test\\Ground_Fixture.inc on line 6.";i:7;s:148:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\test\\Ground_Fixture.inc on line 6.";i:8;s:148:"warning: Invalid argument supplied for foreach() in E:\\Websites\\ground_drupal\\sites\\all\\modules\\custom\\ground_php\\test\\Ground_Fixture.inc on line 6.";}}');
 
@@ -1557,6 +1709,17 @@ INSERT INTO `system` (`filename`, `name`, `type`, `owner`, `status`, `throttle`,
 ('sites/all/modules/contrib/devel/devel_node_access.module', 'devel_node_access', 'module', '', 0, 0, 0, -1, 0, 'a:10:{s:4:"name";s:17:"Devel node access";s:11:"description";s:67:"Developer block and page illustrating relevant node_access records.";s:7:"package";s:11:"Development";s:4:"core";s:3:"6.x";s:7:"version";s:8:"6.x-1.27";s:7:"project";s:5:"devel";s:9:"datestamp";s:10:"1338940278";s:12:"dependencies";a:0:{}s:10:"dependents";a:0:{}s:3:"php";s:5:"4.3.5";}'),
 ('sites/all/modules/contrib/filefield/filefield.module', 'filefield', 'module', '', 1, 0, 0, 6104, 0, 'a:10:{s:4:"name";s:9:"FileField";s:11:"description";s:26:"Defines a file field type.";s:12:"dependencies";a:1:{i:0;s:7:"content";}s:7:"package";s:3:"CCK";s:4:"core";s:3:"6.x";s:3:"php";s:3:"5.0";s:7:"version";s:8:"6.x-3.10";s:7:"project";s:9:"filefield";s:9:"datestamp";s:10:"1303970816";s:10:"dependents";a:0:{}}'),
 ('sites/all/modules/contrib/filefield/filefield_meta/filefield_meta.module', 'filefield_meta', 'module', '', 0, 0, 0, -1, 0, 'a:10:{s:4:"name";s:14:"FileField Meta";s:11:"description";s:48:"Add metadata gathering and storage to FileField.";s:12:"dependencies";a:2:{i:0;s:9:"filefield";i:1;s:6:"getid3";}s:7:"package";s:3:"CCK";s:4:"core";s:3:"6.x";s:3:"php";s:3:"5.0";s:7:"version";s:8:"6.x-3.10";s:7:"project";s:9:"filefield";s:9:"datestamp";s:10:"1303970816";s:10:"dependents";a:0:{}}'),
+('sites/all/modules/contrib/imagefield/imagefield.module', 'imagefield', 'module', '', 1, 0, 0, 6006, 0, 'a:10:{s:4:"name";s:10:"ImageField";s:11:"description";s:28:"Defines an image field type.";s:4:"core";s:3:"6.x";s:12:"dependencies";a:2:{i:0;s:7:"content";i:1;s:9:"filefield";}s:7:"package";s:3:"CCK";s:7:"version";s:8:"6.x-3.10";s:7:"project";s:10:"imagefield";s:9:"datestamp";s:10:"1303971115";s:10:"dependents";a:0:{}s:3:"php";s:5:"4.3.5";}'),
+('sites/all/modules/contrib/location/contrib/location_addanother/location_addanother.module', 'location_addanother', 'module', '', 0, 0, 0, -1, 0, 'a:10:{s:4:"name";s:20:"Location Add Another";s:11:"description";s:94:"Allows you to quickly add locations directly from a node without having to click ''edit'' first.";s:12:"dependencies";a:2:{i:0;s:8:"location";i:1;s:13:"location_node";}s:7:"package";s:8:"Location";s:4:"core";s:3:"6.x";s:7:"version";s:7:"6.x-3.2";s:7:"project";s:8:"location";s:9:"datestamp";s:10:"1343220789";s:10:"dependents";a:0:{}s:3:"php";s:5:"4.3.5";}'),
+('sites/all/modules/contrib/location/contrib/location_cck/location_cck.module', 'location_cck', 'module', '', 1, 0, 0, 6301, 0, 'a:10:{s:4:"name";s:12:"Location CCK";s:11:"description";s:30:"Defines a Location field type.";s:4:"core";s:3:"6.x";s:7:"package";s:3:"CCK";s:12:"dependencies";a:2:{i:0;s:8:"location";i:1;s:7:"content";}s:7:"version";s:7:"6.x-3.2";s:7:"project";s:8:"location";s:9:"datestamp";s:10:"1343220789";s:10:"dependents";a:0:{}s:3:"php";s:5:"4.3.5";}'),
+('sites/all/modules/contrib/location/contrib/location_fax/location_fax.module', 'location_fax', 'module', '', 0, 0, 0, -1, 0, 'a:10:{s:4:"name";s:12:"Location Fax";s:7:"package";s:8:"Location";s:11:"description";s:45:"Allows you to add a fax number to a location.";s:12:"dependencies";a:1:{i:0;s:8:"location";}s:4:"core";s:3:"6.x";s:7:"version";s:7:"6.x-3.2";s:7:"project";s:8:"location";s:9:"datestamp";s:10:"1343220789";s:10:"dependents";a:0:{}s:3:"php";s:5:"4.3.5";}'),
+('sites/all/modules/contrib/location/contrib/location_generate/location_generate.module', 'location_generate', 'module', '', 0, 0, 0, -1, 0, 'a:10:{s:4:"name";s:17:"Location Generate";s:11:"description";s:52:"Bulk assign random latitude and longitudes to nodes.";s:7:"package";s:11:"Development";s:4:"core";s:3:"6.x";s:12:"dependencies";a:2:{i:0;s:14:"devel_generate";i:1;s:8:"location";}s:7:"version";s:7:"6.x-3.2";s:7:"project";s:8:"location";s:9:"datestamp";s:10:"1343220789";s:10:"dependents";a:0:{}s:3:"php";s:5:"4.3.5";}'),
+('sites/all/modules/contrib/location/contrib/location_phone/location_phone.module', 'location_phone', 'module', '', 0, 0, 0, -1, 0, 'a:10:{s:4:"name";s:14:"Location Phone";s:7:"package";s:8:"Location";s:11:"description";s:47:"Allows you to add a phone number to a location.";s:12:"dependencies";a:1:{i:0;s:8:"location";}s:4:"core";s:3:"6.x";s:7:"version";s:7:"6.x-3.2";s:7:"project";s:8:"location";s:9:"datestamp";s:10:"1343220789";s:10:"dependents";a:0:{}s:3:"php";s:5:"4.3.5";}'),
+('sites/all/modules/contrib/location/contrib/location_search/location_search.module', 'location_search', 'module', '', 0, 0, 0, -1, 0, 'a:10:{s:4:"name";s:15:"Location Search";s:7:"package";s:8:"Location";s:11:"description";s:35:"Advanced search page for locations.";s:4:"core";s:3:"6.x";s:12:"dependencies";a:2:{i:0;s:6:"search";i:1;s:8:"location";}s:7:"version";s:7:"6.x-3.2";s:7:"project";s:8:"location";s:9:"datestamp";s:10:"1343220789";s:10:"dependents";a:0:{}s:3:"php";s:5:"4.3.5";}'),
+('sites/all/modules/contrib/location/contrib/location_taxonomy/location_taxonomy.module', 'location_taxonomy', 'module', '', 0, 0, 0, -1, 0, 'a:10:{s:4:"name";s:17:"Location Taxonomy";s:11:"description";s:40:"Associate locations with taxonomy terms.";s:12:"dependencies";a:2:{i:0;s:8:"location";i:1;s:8:"taxonomy";}s:7:"package";s:8:"Location";s:4:"core";s:3:"6.x";s:7:"version";s:7:"6.x-3.2";s:7:"project";s:8:"location";s:9:"datestamp";s:10:"1343220789";s:10:"dependents";a:0:{}s:3:"php";s:5:"4.3.5";}'),
+('sites/all/modules/contrib/location/location.module', 'location', 'module', '', 1, 0, 0, 6309, 0, 'a:10:{s:4:"name";s:8:"Location";s:7:"package";s:8:"Location";s:11:"description";s:213:"The location module allows you to associate a geographic location with content and users. Users can do proximity searches by postal code.  This is useful for organizing communities that have a geographic presence.";s:4:"core";s:3:"6.x";s:7:"version";s:7:"6.x-3.2";s:7:"project";s:8:"location";s:9:"datestamp";s:10:"1343220789";s:12:"dependencies";a:0:{}s:10:"dependents";a:0:{}s:3:"php";s:5:"4.3.5";}'),
+('sites/all/modules/contrib/location/location_node.module', 'location_node', 'module', '', 1, 0, 0, 0, 0, 'a:10:{s:4:"name";s:14:"Node Locations";s:11:"description";s:31:"Associate locations with nodes.";s:12:"dependencies";a:1:{i:0;s:8:"location";}s:7:"package";s:8:"Location";s:4:"core";s:3:"6.x";s:7:"version";s:7:"6.x-3.2";s:7:"project";s:8:"location";s:9:"datestamp";s:10:"1343220789";s:10:"dependents";a:0:{}s:3:"php";s:5:"4.3.5";}'),
+('sites/all/modules/contrib/location/location_user.module', 'location_user', 'module', '', 0, 0, 0, -1, 0, 'a:10:{s:4:"name";s:14:"User Locations";s:11:"description";s:31:"Associate locations with users.";s:12:"dependencies";a:1:{i:0;s:8:"location";}s:7:"package";s:8:"Location";s:4:"core";s:3:"6.x";s:7:"version";s:7:"6.x-3.2";s:7:"project";s:8:"location";s:9:"datestamp";s:10:"1343220789";s:10:"dependents";a:0:{}s:3:"php";s:5:"4.3.5";}'),
 ('sites/all/modules/custom/admin/admin.module', 'admin', 'module', '', 1, 0, 0, 6202, 1, 'a:10:{s:4:"name";s:5:"Admin";s:11:"description";s:42:"UI helpers for Drupal admins and managers.";s:7:"package";s:14:"Administration";s:4:"core";s:3:"6.x";s:3:"php";s:5:"5.1.0";s:7:"version";s:11:"6.x-2.x-dev";s:7:"project";s:5:"admin";s:9:"datestamp";s:10:"1305720134";s:12:"dependencies";a:0:{}s:10:"dependents";a:0:{}}'),
 ('sites/all/modules/custom/ground_php/ground_php.module', 'ground_php', 'module', '', 1, 0, 0, 0, 0, 'a:9:{s:4:"name";s:10:"Ground PHP";s:11:"description";s:33:"Lightweight ORM/service for Bloom";s:4:"core";s:3:"6.x";s:7:"package";s:10:"Silent Orb";s:3:"php";s:3:"5.2";s:5:"files";a:11:{i:0;s:18:"inc/Object_Map.inc";i:1;s:14:"inc/Delete.inc";i:2;s:21:"inc/Dynamic_Query.inc";i:3;s:20:"inc/Link_Trellis.inc";i:4;s:13:"inc/Query.inc";i:5;s:14:"inc/Update.inc";i:6;s:15:"inc/Trellis.inc";i:7;s:14:"inc/Ground.inc";i:8;s:21:"inc/Ground_Module.inc";i:9;s:18:"inc/Node_Query.inc";i:10;s:16:"test/Fixture.inc";}s:12:"dependencies";a:0:{}s:10:"dependents";a:0:{}s:7:"version";N;}'),
 ('sites/all/modules/custom/ground_php/modules/ground_db/ground_db.module', 'ground_db', 'module', '', 1, 0, 0, 0, 0, 'a:9:{s:4:"name";s:9:"Ground DB";s:11:"description";s:31:"General Database Management API";s:4:"core";s:3:"6.x";s:7:"package";s:10:"Silent Orb";s:3:"php";s:3:"5.3";s:5:"files";a:2:{i:0;s:23:"inc/Ground_Database.inc";i:1;s:13:"inc/Table.inc";}s:12:"dependencies";a:0:{}s:10:"dependents";a:0:{}s:7:"version";N;}'),
@@ -1720,7 +1883,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 INSERT INTO `users` (`uid`, `name`, `pass`, `mail`, `mode`, `sort`, `threshold`, `theme`, `signature`, `signature_format`, `created`, `access`, `login`, `status`, `timezone`, `language`, `picture`, `init`, `data`) VALUES
 (0, '', '', '', 0, 0, 0, '', '', 0, 0, 0, 0, 0, NULL, '', '', '', NULL),
-(1, 'test', '098f6bcd4621d373cade4e832627b4f6', 'nothing@nowhere.com', 0, 0, 0, '', '', 0, 1358729143, 1362458054, 1362455901, 1, '-25200', '', '', 'christopherwjohnson@gmail.com', 'a:1:{s:13:"form_build_id";s:37:"form-10494efa230d17ec301a329f32252424";}');
+(1, 'test', '098f6bcd4621d373cade4e832627b4f6', 'nothing@nowhere.com', 0, 0, 0, '', '', 0, 1358729143, 1362589873, 1362455901, 1, '-25200', '', '', 'christopherwjohnson@gmail.com', 'a:1:{s:13:"form_build_id";s:37:"form-10494efa230d17ec301a329f32252424";}');
 
 -- --------------------------------------------------------
 
@@ -1772,7 +1935,7 @@ INSERT INTO `variable` (`name`, `value`) VALUES
 ('comment_preview_monster', 's:1:"1";'),
 ('comment_subject_field_lair', 's:1:"1";'),
 ('comment_subject_field_monster', 's:1:"1";'),
-('content_extra_weights_lair', 'a:7:{s:5:"title";s:2:"-5";s:10:"body_field";s:1:"0";s:20:"revision_information";s:2:"20";s:6:"author";s:2:"20";s:7:"options";s:2:"25";s:16:"comment_settings";s:2:"30";s:4:"menu";s:2:"-2";}'),
+('content_extra_weights_lair', 'a:8:{s:5:"title";s:2:"-5";s:10:"body_field";s:1:"0";s:20:"revision_information";s:2:"20";s:6:"author";s:2:"20";s:7:"options";s:2:"25";s:16:"comment_settings";s:2:"30";s:4:"menu";s:2:"-2";s:11:"attachments";s:2:"30";}'),
 ('content_extra_weights_monster', 'a:8:{s:5:"title";s:2:"-5";s:10:"body_field";s:1:"0";s:20:"revision_information";s:2:"20";s:6:"author";s:2:"20";s:7:"options";s:2:"25";s:16:"comment_settings";s:2:"30";s:4:"menu";s:2:"-2";s:11:"attachments";s:2:"30";}'),
 ('content_schema_version', 'i:6009;'),
 ('css_js_query_string', 's:20:"u0000000000000000000";'),
@@ -1787,8 +1950,10 @@ INSERT INTO `variable` (`name`, `value`) VALUES
 ('install_task', 's:4:"done";'),
 ('install_time', 'i:1358729224;'),
 ('javascript_parsed', 'a:0:{}'),
+('location_settings_node_lair', 'a:0:{}'),
+('location_settings_node_monster', 'a:0:{}'),
 ('menu_expanded', 'a:0:{}'),
-('menu_masks', 'a:19:{i:0;i:127;i:1;i:63;i:2;i:62;i:3;i:61;i:4;i:59;i:5;i:31;i:6;i:30;i:7;i:29;i:8;i:24;i:9;i:21;i:10;i:15;i:11;i:14;i:12;i:11;i:13;i:7;i:14;i:6;i:15;i:5;i:16;i:3;i:17;i:2;i:18;i:1;}'),
+('menu_masks', 'a:20:{i:0;i:127;i:1;i:63;i:2;i:62;i:3;i:61;i:4;i:60;i:5;i:59;i:6;i:31;i:7;i:30;i:8;i:29;i:9;i:24;i:10;i:21;i:11;i:15;i:12;i:14;i:13;i:11;i:14;i:7;i:15;i:6;i:16;i:5;i:17;i:3;i:18;i:2;i:19;i:1;}'),
 ('node_options_forum', 'a:1:{i:0;s:6:"status";}'),
 ('node_options_lair', 'a:2:{i:0;s:6:"status";i:1;s:7:"promote";}'),
 ('node_options_monster', 'a:2:{i:0;s:6:"status";i:1;s:7:"promote";}'),
@@ -1855,6 +2020,28 @@ CREATE TABLE IF NOT EXISTS `watchdog` (
   PRIMARY KEY (`wid`),
   KEY `type` (`type`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `zipcodes`
+--
+
+CREATE TABLE IF NOT EXISTS `zipcodes` (
+  `zip` varchar(16) NOT NULL DEFAULT '0',
+  `city` varchar(30) NOT NULL DEFAULT '',
+  `state` varchar(30) NOT NULL DEFAULT '',
+  `latitude` decimal(10,6) NOT NULL DEFAULT '0.000000',
+  `longitude` decimal(10,6) NOT NULL DEFAULT '0.000000',
+  `timezone` tinyint(4) NOT NULL DEFAULT '0',
+  `dst` tinyint(4) NOT NULL DEFAULT '0',
+  `country` char(2) NOT NULL DEFAULT '',
+  KEY `pc` (`country`,`zip`),
+  KEY `zip` (`zip`),
+  KEY `latitude` (`latitude`),
+  KEY `longitude` (`longitude`),
+  KEY `country` (`country`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
